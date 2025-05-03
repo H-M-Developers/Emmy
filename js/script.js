@@ -1,7 +1,22 @@
 function toggleMenu() {
     const menuNav = document.getElementById('menu-nav');
+    const btnWhats = document.querySelector('.btn-whats');
     menuNav.classList.toggle('active');
+
+    if (menuNav.classList.contains('active')) {
+        btnWhats.style.display = 'none';
+    } else {
+        btnWhats.style.display = 'flex';
+    }
 }
+
+// Fechar o menu ao clicar em qualquer link
+document.querySelectorAll('#menu-nav ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+        const menuNav = document.getElementById('menu-nav');
+        menuNav.classList.remove('active');
+    });
+});
 
 // Remove o preloader após o carregamento da página
 document.addEventListener("DOMContentLoaded", () => {
