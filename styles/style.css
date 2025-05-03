@@ -1,0 +1,385 @@
+/* --------------------------GLOBAL STYLES--------------------------  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Standup W01 Caps Regular", sans-serif;
+    color: #000;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.section-limited {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+
+/* --------------------------PRELOADER--------------------------  */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#preloader .preloader-logo {
+    width: 500px;
+    height: auto;
+    margin-bottom: 70px;
+}
+
+#preloader .spinner {
+    width: 70px;
+    height: 70px;
+    border: 5px solid #ccc;
+    border-top: 5px solid #000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/* ----------------- INICIO DE ESTILIZAÇÃO DO HEADER ----------------- */
+header {
+    background: linear-gradient(to right, #000000 10%, #3f3f3f 100%);
+}
+
+.section-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.section-header .content-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.section-header .content-header .null {
+    width: 90px;
+}
+
+.section-header .content-header .content-header-left {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    object-fit: cover;
+}
+
+.section-header .content-header .content-header-left img {
+    max-width: 50%;
+}
+
+/* ----------------------Botão Hamburguer ---------------------- */
+/* Hamburger Menu Styles */
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    display: block;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Show hamburger menu on smaller screens */
+.hamburger-menu {
+    display: flex;
+}
+
+#menu-nav {
+    display: none;
+    flex-direction: column;
+    background: linear-gradient(to top, #000000 10%, #3f3f3f 100%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    width: 68%;
+    border-radius: 10px;
+}
+
+#menu-nav .imagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+#menu-nav .imagem img{
+    width: 70px;
+    height: 70px;
+}
+
+#menu-nav .close-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+
+#menu-nav .close-menu:hover {
+    transform: scale(1.2);
+}
+
+#menu-nav.active {
+    display: flex;
+}
+
+#menu-nav ul {
+    text-align: start;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 0.5px solid #ffffff60;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 300px;
+}
+
+#menu-nav li {
+    padding: 10px;
+    text-align: start;
+    width: 80%;
+    margin-left: 20px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #ffffff60;
+}
+
+#menu-nav li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 22px;
+    padding: 0;
+    letter-spacing: 5px;
+}
+
+#menu-nav .mobile-nav-footer {
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#menu-nav .mobile-cta-button {
+    display: block;
+    height: 60px;
+    background-color: #ffe0a7;
+    color: #000;
+    text-align: center;
+    padding: 15px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    transition: all 0.3s ease;
+}
+
+/* ---------------------- Fim Botão Hamburguer ---------------------- */
+/* ----------------- FIM DAS ESTILIZAÇÕES DO HEADER ----------------- */
+
+/* ----------------- INICIO DAS ESTILIZAÇÕES DO BANNER ----------------- */
+.section-banner {
+    background: url('../assets/banner.webp') no-repeat center center/contain,
+        linear-gradient(to right, rgb(0, 0, 0), rgb(63, 63, 63));
+    background-size: auto 75%;
+    background-position: bottom;
+    
+
+
+}
+
+.section-banner {
+    height: 85vh;
+    padding: 40px 0;
+}
+
+/* .section-banner .content-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    padding: 50px;
+} */
+.content-banner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-bottom: 50px;
+
+    & h1 {
+        font-size: 40px;
+        color: #fff;
+        text-align: center;
+        letter-spacing: 4px;
+    }
+
+    & p {
+        font-size: 18px;
+        color: #fff;
+        text-align: center;
+        letter-spacing: 6px;
+    }
+}
+
+
+.banner-img {
+    width: 100%;
+    text-align: center;
+}
+
+
+.banner-img img {
+    display: none;
+    z-index: 2;
+    height: 55vh;
+    object-fit: cover;
+    margin: 40px auto 0 auto;
+    filter: drop-shadow(2px 2px 40px rgba(150, 150, 150, 0.301));
+}
+
+/* ----------------- FIM DAS ESTILIZAÇÕES DO BANNER ----------------- */
+
+
+
+
+
+
+
+
+
+/* ----------------- INICIO DAS ESTILIZAÇÕES DO RODAPÉ ----------------- */
+footer {
+    background-color: #000000f5;
+}
+
+.section-footer {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.section-footer .content-footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.section-footer .content-footer .content-01 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(90deg,
+            rgba(60, 74, 83, 0.678),
+            #e6e6e6,
+            rgba(60, 74, 83, 0.582)) 1;
+}
+
+.section-footer .content-footer .content-01 p {
+    color: #dddddd;
+    font-size: 22px;
+}
+
+.section-footer .content-footer .content-01 p {
+    font-size: 15px;
+    margin-top: 10px;
+    color: #dddddd;
+}
+
+.section-footer .content-footer a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.section-footer .content-footer .section-dev .content-dev a p {
+    color: #dddddd8a;
+    padding-top: 0;
+}
+
+.section-footer .content-footer .section-dev .content-dev a p span {
+    color: #ddddddb0;
+    padding-top: 0;
+}
+
+.section-footer .content-footer .btn-whats {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: #25d366;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.section-footer .content-footer .btn-whats img {
+    position: absolute;
+    width: 40px;
+    bottom: 10px;
+    right: 9px;
+}
+
+.section-footer .content-footer .btn-whats:hover {
+    background-color: #128c7e;
+    transform: scale(1.2);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+/* ----------------- FIM DAS ESTILIZAÇÕES DO RODAPÉ ----------------- */
