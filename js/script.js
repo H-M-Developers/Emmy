@@ -89,13 +89,45 @@ sliderContainer.addEventListener("transitionend", () => {
     }
 });
 
-// Evento para o botão "Anterior"
+// Eventos de toque
+let startX = 0;
+let currentX = 0;
+let isDragging = false;
+
+sliderContainer.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+    sliderContainer.style.transition = "none"; // Remove a transição durante o arraste
+});
+
+sliderContainer.addEventListener("touchmove", (e) => {
+    if (!isDragging) return;
+    currentX = e.touches[0].clientX;
+    const deltaX = currentX - startX;
+    const offset = -currentIndex * cardWidth + deltaX;
+    sliderContainer.style.transform = `translateX(${offset}px)`;
+});
+
+sliderContainer.addEventListener("touchend", () => {
+    isDragging = false;
+    const deltaX = currentX - startX;
+
+    // Determinar se o usuário deslizou para a esquerda ou direita
+    if (deltaX > 50) {
+        currentIndex--; // Deslizou para a direita
+    } else if (deltaX < -50) {
+        currentIndex++; // Deslizou para a esquerda
+    }
+
+    updateSliderPosition();
+});
+
+// Eventos para os botões
 prevButton.addEventListener("click", () => {
     currentIndex--;
     updateSliderPosition();
 });
 
-// Evento para o botão "Próximo"
 nextButton.addEventListener("click", () => {
     currentIndex++;
     updateSliderPosition();
