@@ -641,7 +641,7 @@ header {
     position: relative;
     width: 100%;
     margin: 30px auto;
-    height: 55vh;
+    height: 65vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -698,7 +698,7 @@ header {
     .carousel
     .carousel-slide.active
     img {
-    transform: scale(1.1);
+    transform: scale(1.2);
     opacity: 1;
 }
 
