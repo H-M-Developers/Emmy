@@ -6,7 +6,6 @@
     text-decoration: none;
     font-family: "Standup W01 Caps Regular", sans-serif;
     color: #000;
-
 }
 
 html {
@@ -252,7 +251,7 @@ header {
 
 /* ----------------- INICIO DAS ESTILIZAÇÕES DO BANNER ----------------- */
 .section-banner {
-    background: url('../assets/banner.webp') no-repeat center center/contain,
+    background: url("../assets/banner.webp") no-repeat center center/contain,
         linear-gradient(to right, rgb(0, 0, 0), rgb(63, 63, 63));
     background-size: auto 75%;
     background-position: bottom;
@@ -304,6 +303,7 @@ header {
 
 .sobre {
     height: 100vh;
+    /* padding: 30px 30px; */
 }
 
 .sobre-image {
@@ -331,28 +331,28 @@ header {
     align-items: flex-start;
     justify-content: space-around;
     position: relative;
-    padding: 50px 20px;
+    /* padding: 50px 20px; */
     background-color: #f9f9f9;
     overflow: hidden;
 }
 
 .sobre-container {
     z-index: 2;
-    /* max-width: 600px; */
+    /* max-width: 200px; */
 }
 
 .sobre .sobre-container .sobre-text {
     position: absolute;
     top: 0px;
     left: 0px;
-    padding: 10px;
+    padding: 30px 20px;
     flex: 1;
     max-width: 600px;
     margin: 0 auto;
 }
 
 .sobre .sobre-container .sobre-text h2 {
-    font-size: 35px;
+    font-size: 29px;
     color: #333;
     margin-bottom: 30px;
     border-left: 4px solid #333;
@@ -360,7 +360,7 @@ header {
 }
 
 .sobre .sobre-container .sobre-text p {
-    font-size: 20px;
+    font-size: 17px;
     color: #555;
     line-height: 22px;
     margin-bottom: 20px;
@@ -381,7 +381,7 @@ header {
 .sobre .slider-carousel {
     max-width: 850px;
     width: 100%;
-    height: 60%;
+    height: 80%;
     overflow: hidden;
     background-color: #f9f9f9;
     position: relative;
@@ -390,13 +390,15 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .sobre .slider-carousel .slider-container {
     display: flex;
-    align-items: flex-end;
-    gap: 10px;
+    /* margin-top: 100px; */
+    padding-top: 110px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 
     transition: transform 0.5s ease-in-out;
     width: 100%;
@@ -405,11 +407,11 @@ header {
 }
 
 .sobre .slider-carousel .slider-container .slider-card {
-    background: linear-gradient(to right, #ffffff, #e6e6e600);
+    background: linear-gradient(to right, #ffffff8a, #ffffff8a);
     border-radius: 15px;
     box-shadow: inset 0px 0px 20px #ffe0a76b;
-    width: 278px;
-    height: 400px;
+    width: 300px;
+    height: 405px;
     text-align: center;
     padding: 30px;
     flex-shrink: 0;
@@ -455,7 +457,7 @@ header {
 .slider-prev,
 .slider-next {
     position: absolute;
-    top: 50%;
+    top: 60%;
     transform: translateY(-50%);
     background-color: #00000044;
     color: #fff;
@@ -483,7 +485,6 @@ header {
 /* ----------------- FIM DAS ESTILIZAÇÕES DA SEÇÃO SOBRE ----------------- */
 /* /////////////////////////////////////////////////////////////////////// */
 
-
 /* ----------------- INICIO DAS ESTILIZAÇÕES DA SEÇÃO LINKS ----------------- */
 .section-links {
     display: flex;
@@ -501,7 +502,7 @@ header {
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    
+
     /* background-size: contain; */
 }
 
@@ -600,7 +601,6 @@ header {
 /* ----------------- FIM DAS ESTILIZAÇÕES DA SEÇÃO LINKS ----------------- */
 /* /////////////////////////////////////////////////////////////////////// */
 
-
 /* ----------------- INICIO DAS ESTILIZAÇÕES DA SEÇÃO ESPAÇO E CONTATOS ----------------- */
 .section-contact .content-contact {
     background: linear-gradient(rgba(0, 0, 0, 0.9), rgb(0, 0, 0, 0.6)),
@@ -656,14 +656,23 @@ header {
     transition: transform 0.5s ease-in-out;
 }
 
-.section-contact .content-contact .carousel-container .carousel .carousel-slide {
+.section-contact
+    .content-contact
+    .carousel-container
+    .carousel
+    .carousel-slide {
     flex: 0 0 auto;
     transition: transform 0.5s ease, opacity 0.5s ease;
     opacity: 0.5;
     cursor: pointer;
 }
 
-.section-contact .content-contact .carousel-container .carousel .carousel-slide img {
+.section-contact
+    .content-contact
+    .carousel-container
+    .carousel
+    .carousel-slide
+    img {
     width: 250px;
     height: 330px;
     object-fit: cover;
@@ -673,7 +682,12 @@ header {
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.404);
 }
 
-.section-contact .content-contact .carousel-container .carousel .carousel-slide.active img {
+.section-contact
+    .content-contact
+    .carousel-container
+    .carousel
+    .carousel-slide.active
+    img {
     transform: scale(1.2);
     align-items: center;
     opacity: 1;
@@ -881,7 +895,7 @@ header {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: #25D366;
+    background-color: #25d366;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -896,7 +910,14 @@ header {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    background: linear-gradient(
+        45deg,
+        #feda75,
+        #fa7e1e,
+        #d62976,
+        #962fbf,
+        #4f5bd5
+    );
     display: flex;
     justify-content: center;
     align-items: center;
@@ -909,7 +930,6 @@ header {
 
 /* ----------------- FIM DAS ESTILIZAÇÕES DA SEÇÃO CONTATOS ----------------- */
 /* /////////////////////////////////////////////////////////////////////// */
-
 
 /* ----------------- INICIO DAS ESTILIZAÇÕES DO RODAPÉ ----------------- */
 footer {
@@ -932,10 +952,13 @@ footer {
     padding-bottom: 10px;
     margin-bottom: 20px;
     border-bottom: 2px solid;
-    border-image: linear-gradient(90deg,
+    border-image: linear-gradient(
+            90deg,
             rgba(60, 74, 83, 0.678),
             #e6e6e6,
-            rgba(60, 74, 83, 0.582)) 1;
+            rgba(60, 74, 83, 0.582)
+        )
+        1;
 }
 
 .section-footer .content-footer .content-01 p {
@@ -999,13 +1022,12 @@ footer {
     transition: transform 0.3s, background-color 0.3s;
 }
 
-#menu-nav.active+.section-footer .btn-whats {
+#menu-nav.active + .section-footer .btn-whats {
     display: none;
 }
 
 /* ----------------- FIM DAS ESTILIZAÇÕES DO RODAPÉ ----------------- */
 /* /////////////////////////////////////////////////////////////////////// */
-
 
 @media screen and (max-width: 400px) {
     .sobre {
@@ -1019,11 +1041,9 @@ footer {
 
     .sobre .slider-carousel .slider-container {
         height: 100%;
-
     }
 
     .sobre .slider-carousel .slider-container .slider-card {
         height: 400px;
     }
-
 }
