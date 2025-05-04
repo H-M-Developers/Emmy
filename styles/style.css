@@ -830,7 +830,7 @@ header {
     background-color: rgba(11, 11, 11, 0.5);
     border-radius: 10px;
     width: 95%;
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
 }
 
 .section-contact .content-contact .section-map div {
