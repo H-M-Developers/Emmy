@@ -599,12 +599,13 @@ header {
 
 /* ----------------- INICIO DAS ESTILIZAÇÕES DA SEÇÃO ESPAÇO E CONTATOS ----------------- */
 .section-contact .content-contact {
-    background: linear-gradient(rgba(0, 0, 0, 0.9), rgb(0, 0, 0, 0.6)),
-        url("../assets/ex09.webp");
+    background: linear-gradient(rgba(0, 0, 0, 0.897), rgba(0, 0, 0, 0.87)),
+        url("../assets/ex02.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+
     z-index: -10;
     border-top: 2px solid #ffe0a7;
     border-bottom: 2px solid #ffe0a7;
@@ -634,9 +635,10 @@ header {
     margin-bottom: 40px;
 }
 
+/* Ajustes no CSS do carrossel */
 .section-contact .content-contact .carousel-container {
     position: relative;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     height: 55vh;
     display: flex;
@@ -646,10 +648,12 @@ header {
 }
 
 .section-contact .content-contact .carousel-container .carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
-    gap: 20px;
-    transition: transform 0.5s ease-in-out;
+    justify-content: space-between;
 }
 
 .section-contact
@@ -657,8 +661,8 @@ header {
     .carousel-container
     .carousel
     .carousel-slide {
-    flex: 0 0 auto;
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    position: absolute;
+    transition: all 0.5s ease;
     opacity: 0.5;
     cursor: pointer;
 }
@@ -673,9 +677,18 @@ header {
     height: 330px;
     object-fit: cover;
     border-radius: 10px;
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    transition: all 0.5s ease;
     border: 2px solid #ffe0a7;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.404);
+}
+
+.section-contact
+    .content-contact
+    .carousel-container
+    .carousel
+    .carousel-slide.active {
+    z-index: 2;
+    opacity: 1;
 }
 
 .section-contact
@@ -685,9 +698,7 @@ header {
     .carousel-slide.active
     img {
     transform: scale(1.2);
-    align-items: center;
     opacity: 1;
-    z-index: 2;
 }
 
 .carousel-prev,
@@ -723,69 +734,7 @@ header {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Pop-up styles */
-.popup {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-}
-
-.popup-content {
-    max-width: 80%;
-    max-height: 80%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.popup-close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.popup-prev,
-.popup-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 15px;
-    cursor: pointer;
-    z-index: 1001;
-    border-radius: 50%;
-    font-size: 20px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.popup-prev {
-    left: 20px;
-}
-
-.popup-next {
-    right: 20px;
-}
-
-.popup-prev:hover,
-.popup-next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
+/* O restante do CSS permanece o mesmo */
 
 .section-contact .content-contact .contact-info {
     display: flex;
@@ -817,7 +766,7 @@ header {
 .section-contact .content-contact .section-map {
     background-color: rgba(11, 11, 11, 0.5);
     border-radius: 10px;
-    width: 100%;
+    width: 95%;
     margin: 0 auto;
 }
 
@@ -828,7 +777,7 @@ header {
 }
 
 .section-contact .content-contact .section-map div iframe {
-    height: 300px;
+    height: 250px;
     width: 90%;
     margin: 0 auto;
     padding-top: 20px;
@@ -850,7 +799,7 @@ header {
 
 .section-contact .content-contact .section-map .contatos-direto div {
     width: 100%;
-    height: 90px;
+    height: 70px;
 
     display: flex;
     align-items: center;
@@ -1042,4 +991,66 @@ footer {
     .sobre .slider-carousel .slider-container .slider-card {
         height: 400px;
     }
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    touch-action: pan-y; /* Permite deslizar horizontalmente sem interferir no scroll vertical */
+}
+
+.popup.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-content {
+    max-width: 90%;
+    max-height: 80%;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.popup-prev,
+.popup-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.popup-prev {
+    left: 20px;
+}
+
+.popup-next {
+    right: 20px;
 }

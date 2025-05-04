@@ -134,43 +134,177 @@ nextButton.addEventListener("click", () => {
     }
 });
 
-// Controle do carrossel principal
 let currentSlide = 0;
 
 function updateCarousel() {
     const slides = document.querySelectorAll(".carousel-slide");
+    const container = document.querySelector(".carousel-container");
+    const containerWidth = container.offsetWidth;
+    const slideWidth = 250; // Largura base do slide (sem escala)
+    const centerPosition = containerWidth / 2; // Centro do container
+
     slides.forEach((slide, index) => {
         const offset = index - currentSlide; // Calcula a posição relativa do slide
         const isActive = offset === 0; // Verifica se o slide é o ativo
 
-        slide.style.transform = `translateX(${offset * 320}px)`; // Move os slides horizontalmente
-        slide.style.opacity = isActive ? "1" : "0.5"; // Ajusta a opacidade do slide ativo
-        slide.style.zIndex = isActive ? "2" : "1"; // Ajusta a profundidade do slide ativo
-        slide.classList.toggle("active", isActive); // Adiciona ou remove a classe "active"
+        // Calcula a posição para centralizar o slide ativo
+        let position;
+        if (isActive) {
+            // Slide ativo fica centralizado
+            position = centerPosition - slideWidth / 2;
+        } else {
+            // Outros slides são posicionados relativamente ao slide ativo
+            position =
+                centerPosition - slideWidth / 2 + offset * (slideWidth + 20); // 20px é o gap entre slides
+        }
+
+        // Aplica transformações
+        slide.style.transform = `translateX(${position}px) ${
+            isActive ? "scale(1.2)" : "scale(1)"
+        }`;
+        slide.style.opacity = isActive ? "1" : "0.5";
+        slide.style.zIndex = isActive ? "2" : "1";
+        slide.classList.toggle("active", isActive);
     });
 }
 
 function changeSlide(direction) {
     const slides = document.querySelectorAll(".carousel-slide");
-    currentSlide = (currentSlide + direction + slides.length) % slides.length; // Atualiza o índice do slide atual
-    updateCarousel(); // Atualiza a posição do carrossel
+    currentSlide = (currentSlide + direction + slides.length) % slides.length;
+    updateCarousel();
 }
 
-updateCarousel(); // Inicializa o carrossel
+// Função para ajustar o carrossel quando a janela é redimensionada
+function handleResize() {
+    updateCarousel();
+}
 
-// Configuração de auto-slide (troca automática de slides)
-let autoSlide = setInterval(() => {
-    changeSlide(1); // Avança para o próximo slide a cada 3 segundos
-}, 3000);
+// Inicializa o carrossel e adiciona event listeners
+document.addEventListener("DOMContentLoaded", () => {
+    // Verifica se o carrossel existe na página
+    const carousel = document.querySelector(".carousel");
+    if (!carousel) return;
 
-// Pausa o auto-slide ao passar o mouse sobre o carrossel
-document.querySelector(".carousel").addEventListener("mouseenter", () => {
-    clearInterval(autoSlide); // Para o auto-slide
-});
+    // Inicializa o carrossel
+    updateCarousel();
 
-// Retoma o auto-slide ao remover o mouse do carrossel
-document.querySelector(".carousel").addEventListener("mouseleave", () => {
-    autoSlide = setInterval(() => {
-        changeSlide(1); // Retoma o auto-slide
+    // Adiciona listener para redimensionamento da janela
+    window.addEventListener("resize", handleResize);
+
+    // Configuração de auto-slide
+    let autoSlide = setInterval(() => {
+        changeSlide(1);
     }, 3000);
+
+    // Pausa o auto-slide ao passar o mouse sobre o carrossel
+    carousel.addEventListener("mouseenter", () => {
+        clearInterval(autoSlide);
+    });
+
+    // Retoma o auto-slide ao remover o mouse do carrossel
+    carousel.addEventListener("mouseleave", () => {
+        autoSlide = setInterval(() => {
+            changeSlide(1);
+        }, 3000);
+    });
+
+    // Adiciona suporte para navegação por toque (swipe)
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carousel.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    carousel.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        if (touchEndX < touchStartX - 50) {
+            // Swipe para a esquerda
+            changeSlide(1);
+        } else if (touchEndX > touchStartX + 50) {
+            // Swipe para a direita
+            changeSlide(-1);
+        }
+    }
 });
+
+const popup = document.getElementById("popup");
+const popupImg = document.getElementById("popup-img");
+const popupClose = document.querySelector(".popup-close");
+const popupPrev = document.querySelector(".popup-prev");
+const popupNext = document.querySelector(".popup-next");
+
+let currentImageIndex = 0;
+const images = [
+    "assets/ex01.webp",
+    "assets/ex02.webp",
+    "assets/ex03.webp",
+    "assets/ex04.webp",
+    "assets/ex05.webp",
+];
+
+// Variáveis para o controle de swipe
+let touchStartX = 0;
+let touchEndX = 0;
+
+// Função para abrir o popup com a imagem selecionada
+function openPopup(imageSrc) {
+    currentImageIndex = images.indexOf(imageSrc);
+    if (currentImageIndex === -1) return; // Caso a imagem não esteja na lista
+    popupImg.src = imageSrc;
+    popup.classList.add("visible");
+}
+
+// Função para fechar o popup
+function closePopup() {
+    popup.classList.remove("visible");
+}
+
+// Função para navegar entre as imagens no popup
+function navigatePopup(direction) {
+    currentImageIndex += direction;
+
+    // Verifica os limites do índice
+    if (currentImageIndex < 0) {
+        currentImageIndex = images.length - 1; // Vai para a última imagem
+    } else if (currentImageIndex >= images.length) {
+        currentImageIndex = 0; // Volta para a primeira imagem
+    }
+
+    popupImg.src = images[currentImageIndex];
+}
+
+// Eventos para fechar o popup ao clicar fora do conteúdo
+popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+        closePopup();
+    }
+});
+
+// Eventos de toque para navegação por swipe
+popup.addEventListener("touchstart", (e) => {
+    touchStartX = e.touches[0].clientX;
+});
+
+popup.addEventListener("touchmove", (e) => {
+    touchEndX = e.touches[0].clientX;
+});
+
+popup.addEventListener("touchend", () => {
+    handleSwipe();
+});
+
+function handleSwipe() {
+    const swipeThreshold = 50; // Distância mínima para considerar um swipe
+    if (touchEndX < touchStartX - swipeThreshold) {
+        // Swipe para a esquerda
+        navigatePopup(1);
+    } else if (touchEndX > touchStartX + swipeThreshold) {
+        // Swipe para a direita
+        navigatePopup(-1);
+    }
+}
