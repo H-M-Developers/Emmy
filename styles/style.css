@@ -367,16 +367,16 @@ header {
 }
 
 /* --------------------------SLIDER CAROUSEL--------------------------  */
-.slider-section {
-    /* flex-shrink: 1;
+/* .slider-section {
+    flex-shrink: 1;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
     gap: 20px;
     padding: 50px 20px;
-    margin: 100px 200px; */
-}
+    margin: 100px 200px;
+} */
 
 .sobre .slider-carousel {
     max-width: 850px;
@@ -397,8 +397,9 @@ header {
     transition: transform 0.5s ease-in-out;
     padding-top: 110px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 20px;
+    margin-left: 30px;
 
     width: 100%;
     height: 100%;
@@ -448,7 +449,7 @@ header {
 
 .sobre .slider-carousel .slider-container .slider-card p {
     font-family: "Roboto", sans-serif;
-    font-size: 16px;
+    font-size: 13px;
     color: #555;
     line-height: 20px;
 }

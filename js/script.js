@@ -49,50 +49,44 @@ const sliderCards = document.querySelectorAll(".slider-card");
 const prevButton = document.querySelector(".slider-prev");
 const nextButton = document.querySelector(".slider-next");
 
-let currentIndex = 1; // Começa no primeiro card real
+let currentIndex = 0; // Começa no primeiro card
 const cardWidth = sliderCards[0].offsetWidth;
-
-// Clonar o primeiro e o último card
-const firstClone = sliderCards[0].cloneNode(true);
-const lastClone = sliderCards[sliderCards.length - 1].cloneNode(true);
-
-// Adicionar os clones no início e no final
-firstClone.classList.add("clone");
-lastClone.classList.add("clone");
-sliderContainer.appendChild(firstClone);
-sliderContainer.insertBefore(lastClone, sliderCards[0]);
-
-// Atualizar a lista de cards (incluindo os clones)
-const allCards = document.querySelectorAll(".slider-card");
+const maxIndex = sliderCards.length - 1; // Define o último índice permitido com base no número de cards
 
 // Ajustar a posição inicial
-sliderContainer.style.transform = `translateX(-${cardWidth}px)`;
+sliderContainer.style.transform = `translateX(0px)`;
 
 // Função para atualizar a posição do slider
 function updateSliderPosition() {
-    sliderContainer.style.transition = "transform 0.5s ease-in-out";
+    sliderContainer.style.transition =
+        "transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)";
     const offset = -currentIndex * cardWidth;
     sliderContainer.style.transform = `translateX(${offset}px)`;
 }
 
-// Remover a transição ao "pular" para o clone correspondente
-sliderContainer.addEventListener("transitionend", () => {
-    if (allCards[currentIndex].classList.contains("clone")) {
-        sliderContainer.style.transition = "none";
-        if (currentIndex === 0) {
-            currentIndex = allCards.length - 2; // Volta para o último card real
-        } else if (currentIndex === allCards.length - 1) {
-            currentIndex = 1; // Volta para o primeiro card real
-        }
-        const offset = -currentIndex * cardWidth;
-        sliderContainer.style.transform = `translateX(${offset}px)`;
+// Função para verificar limites
+function checkLimits() {
+    if (currentIndex <= 0) {
+        prevButton.disabled = true; // Desativa o botão "Anterior" no primeiro card
+    } else {
+        prevButton.disabled = false;
     }
-});
+
+    if (currentIndex >= maxIndex) {
+        nextButton.disabled = true; // Desativa o botão "Próximo" no último card
+    } else {
+        nextButton.disabled = false;
+    }
+}
+
+// Atualizar os limites no início
+checkLimits();
 
 // Eventos de toque
 let startX = 0;
 let currentX = 0;
 let isDragging = false;
+let deltaX = 0;
 
 sliderContainer.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
@@ -103,34 +97,41 @@ sliderContainer.addEventListener("touchstart", (e) => {
 sliderContainer.addEventListener("touchmove", (e) => {
     if (!isDragging) return;
     currentX = e.touches[0].clientX;
-    const deltaX = currentX - startX;
+    deltaX = currentX - startX;
     const offset = -currentIndex * cardWidth + deltaX;
     sliderContainer.style.transform = `translateX(${offset}px)`;
 });
 
 sliderContainer.addEventListener("touchend", () => {
     isDragging = false;
-    const deltaX = currentX - startX;
 
     // Determinar se o usuário deslizou para a esquerda ou direita
-    if (deltaX > 50) {
+    if (deltaX > 50 && currentIndex > 0) {
         currentIndex--; // Deslizou para a direita
-    } else if (deltaX < -50) {
+    } else if (deltaX < -50 && currentIndex < maxIndex) {
         currentIndex++; // Deslizou para a esquerda
     }
 
     updateSliderPosition();
+    checkLimits(); // Atualiza os limites após o deslizar
+    deltaX = 0; // Resetar o deltaX
 });
 
 // Eventos para os botões
 prevButton.addEventListener("click", () => {
-    currentIndex--;
-    updateSliderPosition();
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateSliderPosition();
+        checkLimits(); // Atualiza os limites após clicar no botão
+    }
 });
 
 nextButton.addEventListener("click", () => {
-    currentIndex++;
-    updateSliderPosition();
+    if (currentIndex < maxIndex) {
+        currentIndex++;
+        updateSliderPosition();
+        checkLimits(); // Atualiza os limites após clicar no botão
+    }
 });
 
 // Controle do carrossel principal
