@@ -302,8 +302,15 @@ header {
 /* //////////////////////////////////////////////////////////////////////// */
 
 .sobre {
-    height: 100vh;
-    /* padding: 30px 30px; */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    position: relative;
+    /* padding: 50px 20px; */
+    background-color: #f9f9f9;
+    overflow: hidden;
 }
 
 .sobre-image {
@@ -317,25 +324,13 @@ header {
 }
 
 .sobre-image img {
-    /* width: 100%; */
+    width: 100%;
     height: 100%;
     object-fit: cover;
     opacity: 0.2;
     mix-blend-mode: lighten;
     transform: scaleX(-1);
 }
-
-.sobre {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-around;
-    position: relative;
-    /* padding: 50px 20px; */
-    background-color: #f9f9f9;
-    overflow: hidden;
-}
-
 .sobre-container {
     z-index: 2;
     /* max-width: 200px; */
@@ -385,7 +380,8 @@ header {
     overflow: hidden;
     background-color: #f9f9f9;
     position: relative;
-    margin-top: 200px;
+    margin-top: 250px;
+    margin-bottom: 20px;
 
     display: flex;
     align-items: center;
@@ -395,7 +391,7 @@ header {
 .sobre .slider-carousel .slider-container {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    padding-top: 110px;
+    /* padding-top: 110px; */
     align-items: center;
     justify-content: space-between;
     gap: 20px;
@@ -498,7 +494,7 @@ header {
 
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)),
         url("../assets/curso.webp");
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -531,8 +527,8 @@ header {
 }
 
 .section-links .content-links .links .card-links {
-    width: 350px;
-    height: 150px;
+    width: 380px;
+    height: 100px;
 
     background-color: #00000063;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
@@ -567,7 +563,7 @@ header {
 
 .section-links .content-links .links .card-links a .image {
     width: 70px;
-    height: 70px;
+    height: 60px;
 
     margin-right: 20px;
     border: 1px solid #15151531;
@@ -1031,11 +1027,11 @@ footer {
 
 @media screen and (max-width: 400px) {
     .sobre {
-        height: 100%;
+        min-height: 100vh;
     }
 
     .sobre .slider-carousel {
-        margin-top: 350px;
+        margin-top: 400px;
         height: 400px;
     }
 
