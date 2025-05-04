@@ -635,11 +635,12 @@ header {
     margin-bottom: 40px;
 }
 
-/* Ajustes no CSS do carrossel */
+/* Ajustes do carrossel */
+
 .section-contact .content-contact .carousel-container {
     position: relative;
     width: 100%;
-    margin: 0 auto;
+    margin: 30px auto;
     height: 55vh;
     display: flex;
     justify-content: center;
@@ -697,7 +698,7 @@ header {
     .carousel
     .carousel-slide.active
     img {
-    transform: scale(1.2);
+    transform: scale(1.1);
     opacity: 1;
 }
 
@@ -734,7 +735,69 @@ header {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* O restante do CSS permanece o mesmo */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    touch-action: pan-y; /* Permite deslizar horizontalmente sem interferir no scroll vertical */
+}
+
+.popup.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-content {
+    max-width: 90%;
+    max-height: 80%;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.popup-prev,
+.popup-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.popup-prev {
+    left: 20px;
+}
+
+.popup-next {
+    right: 20px;
+}
+
+/* Fim do carrosel */
 
 .section-contact .content-contact .contact-info {
     display: flex;
@@ -991,66 +1054,4 @@ footer {
     .sobre .slider-carousel .slider-container .slider-card {
         height: 400px;
     }
-}
-
-.popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semitransparente */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    touch-action: pan-y; /* Permite deslizar horizontalmente sem interferir no scroll vertical */
-}
-
-.popup.visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-.popup-content {
-    max-width: 90%;
-    max-height: 80%;
-    object-fit: contain;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.popup-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 30px;
-    color: #fff;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-.popup-prev,
-.popup-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 40px;
-    color: #fff;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-.popup-prev {
-    left: 20px;
-}
-
-.popup-next {
-    right: 20px;
 }
