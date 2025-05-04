@@ -43,3 +43,46 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }, 100); // Verifica a cada 100ms
 });
+
+
+
+// Controle do carrossel principal
+let currentSlide = 0;
+
+function updateCarousel() {
+    const slides = document.querySelectorAll(".carousel-slide");
+    slides.forEach((slide, index) => {
+        const offset = index - currentSlide; // Calcula a posição relativa do slide
+        const isActive = offset === 0; // Verifica se o slide é o ativo
+
+        slide.style.transform = `translateX(${offset * 320}px)`; // Move os slides horizontalmente
+        slide.style.opacity = isActive ? "1" : "0.5"; // Ajusta a opacidade do slide ativo
+        slide.style.zIndex = isActive ? "2" : "1"; // Ajusta a profundidade do slide ativo
+        slide.classList.toggle("active", isActive); // Adiciona ou remove a classe "active"
+    });
+}
+
+function changeSlide(direction) {
+    const slides = document.querySelectorAll(".carousel-slide");
+    currentSlide = (currentSlide + direction + slides.length) % slides.length; // Atualiza o índice do slide atual
+    updateCarousel(); // Atualiza a posição do carrossel
+}
+
+updateCarousel(); // Inicializa o carrossel
+
+// Configuração de auto-slide (troca automática de slides)
+let autoSlide = setInterval(() => {
+    changeSlide(1); // Avança para o próximo slide a cada 3 segundos
+}, 3000);
+
+// Pausa o auto-slide ao passar o mouse sobre o carrossel
+document.querySelector(".carousel").addEventListener("mouseenter", () => {
+    clearInterval(autoSlide); // Para o auto-slide
+});
+
+// Retoma o auto-slide ao remover o mouse do carrossel
+document.querySelector(".carousel").addEventListener("mouseleave", () => {
+    autoSlide = setInterval(() => {
+        changeSlide(1); // Retoma o auto-slide
+    }, 3000);
+});
