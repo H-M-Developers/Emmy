@@ -1,20 +1,20 @@
 function toggleMenu() {
-    const menuNav = document.getElementById('menu-nav');
-    const btnWhats = document.querySelector('.btn-whats');
-    menuNav.classList.toggle('active');
+    const menuNav = document.getElementById("menu-nav");
+    const btnWhats = document.querySelector(".btn-whats");
+    menuNav.classList.toggle("active");
 
-    if (menuNav.classList.contains('active')) {
-        btnWhats.style.display = 'none';
+    if (menuNav.classList.contains("active")) {
+        btnWhats.style.display = "none";
     } else {
-        btnWhats.style.display = 'flex';
+        btnWhats.style.display = "flex";
     }
 }
 
 // Fechar o menu ao clicar em qualquer link
-document.querySelectorAll('#menu-nav ul li a').forEach(link => {
-    link.addEventListener('click', () => {
-        const menuNav = document.getElementById('menu-nav');
-        menuNav.classList.remove('active');
+document.querySelectorAll("#menu-nav ul li a").forEach((link) => {
+    link.addEventListener("click", () => {
+        const menuNav = document.getElementById("menu-nav");
+        menuNav.classList.remove("active");
     });
 });
 
@@ -44,7 +44,62 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 100); // Verifica a cada 100ms
 });
 
+const sliderContainer = document.querySelector(".slider-container");
+const sliderCards = document.querySelectorAll(".slider-card");
+const prevButton = document.querySelector(".slider-prev");
+const nextButton = document.querySelector(".slider-next");
 
+let currentIndex = 1; // Começa no primeiro card real
+const cardWidth = sliderCards[0].offsetWidth;
+
+// Clonar o primeiro e o último card
+const firstClone = sliderCards[0].cloneNode(true);
+const lastClone = sliderCards[sliderCards.length - 1].cloneNode(true);
+
+// Adicionar os clones no início e no final
+firstClone.classList.add("clone");
+lastClone.classList.add("clone");
+sliderContainer.appendChild(firstClone);
+sliderContainer.insertBefore(lastClone, sliderCards[0]);
+
+// Atualizar a lista de cards (incluindo os clones)
+const allCards = document.querySelectorAll(".slider-card");
+
+// Ajustar a posição inicial
+sliderContainer.style.transform = `translateX(-${cardWidth}px)`;
+
+// Função para atualizar a posição do slider
+function updateSliderPosition() {
+    sliderContainer.style.transition = "transform 0.5s ease-in-out";
+    const offset = -currentIndex * cardWidth;
+    sliderContainer.style.transform = `translateX(${offset}px)`;
+}
+
+// Remover a transição ao "pular" para o clone correspondente
+sliderContainer.addEventListener("transitionend", () => {
+    if (allCards[currentIndex].classList.contains("clone")) {
+        sliderContainer.style.transition = "none";
+        if (currentIndex === 0) {
+            currentIndex = allCards.length - 2; // Volta para o último card real
+        } else if (currentIndex === allCards.length - 1) {
+            currentIndex = 1; // Volta para o primeiro card real
+        }
+        const offset = -currentIndex * cardWidth;
+        sliderContainer.style.transform = `translateX(${offset}px)`;
+    }
+});
+
+// Evento para o botão "Anterior"
+prevButton.addEventListener("click", () => {
+    currentIndex--;
+    updateSliderPosition();
+});
+
+// Evento para o botão "Próximo"
+nextButton.addEventListener("click", () => {
+    currentIndex++;
+    updateSliderPosition();
+});
 
 // Controle do carrossel principal
 let currentSlide = 0;

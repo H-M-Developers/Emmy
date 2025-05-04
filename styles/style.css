@@ -394,20 +394,19 @@ header {
 
 .sobre .slider-carousel .slider-container {
     display: flex;
-    /* margin-top: 100px; */
+    transition: transform 0.5s ease-in-out;
     padding-top: 110px;
     align-items: center;
     justify-content: center;
     gap: 20px;
 
-    transition: transform 0.5s ease-in-out;
     width: 100%;
     height: 100%;
     z-index: 2;
 }
 
 .sobre .slider-carousel .slider-container .slider-card {
-    background: linear-gradient(to right, #ffffff8a, #ffffff8a);
+    background: linear-gradient(to right, #ffffff62, #ffffff62);
     border-radius: 15px;
     box-shadow: inset 0px 0px 20px #ffe0a76b;
     width: 300px;
