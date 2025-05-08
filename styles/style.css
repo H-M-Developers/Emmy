@@ -18,7 +18,7 @@ body {
 }
 
 /* --------------------------PRELOADER--------------------------  */
-#preloader {
+/* #preloader {
     position: fixed;
     top: 0;
     left: 0;
@@ -45,7 +45,7 @@ body {
     border-top: 5px solid #000;
     border-radius: 50%;
     animation: spin 1s linear infinite;
-}
+} */
 
 @keyframes spin {
     0% {
@@ -244,8 +244,6 @@ header {
 
 /* ---------------------- Fim Botão Hamburguer ---------------------- */
 
-
-
 /* ----------------- INICIO DAS ESTILIZAÇÕES DO BANNER ----------------- */
 .section-banner {
     background: url("../assets/banner.webp") no-repeat center center/contain,
@@ -294,8 +292,6 @@ header {
     margin: 40px auto 0 auto;
     filter: drop-shadow(2px 2px 40px rgba(150, 150, 150, 0.301));
 }
-
-
 
 /* ----------------- INICIO DAS ESTILIZAÇÕES DA SEÇÃO SOBRE ----------------- */
 .sobre {
@@ -464,8 +460,6 @@ header {
     background-color: #00000023;
 }
 
-
-
 /* ----------------- INICIO DAS ESTILIZAÇÕES DA SEÇÃO LINKS ----------------- */
 .section-links {
     display: flex;
@@ -576,8 +570,6 @@ header {
     color: #ffffffce;
 }
 
-
-
 /* ----------------- INICIO DAS ESTILIZAÇÕES DA SEÇÃO ESPAÇO E CONTATOS ----------------- */
 .section-contact .content-contact {
     background: linear-gradient(rgba(0, 0, 0, 0.897), rgba(0, 0, 0, 0.87)),
@@ -637,14 +629,23 @@ header {
     justify-content: space-between;
 }
 
-.section-contact .content-contact .carousel-container .carousel .carousel-slide {
+.section-contact
+    .content-contact
+    .carousel-container
+    .carousel
+    .carousel-slide {
     position: absolute;
     transition: all 0.5s ease;
     opacity: 0.5;
     cursor: pointer;
 }
 
-.section-contact .content-contact .carousel-container .carousel .carousel-slide img {
+.section-contact
+    .content-contact
+    .carousel-container
+    .carousel
+    .carousel-slide
+    img {
     width: 250px;
     height: 330px;
     object-fit: cover;
@@ -654,12 +655,21 @@ header {
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.404);
 }
 
-.section-contact .content-contact .carousel-container .carousel .carousel-slide.active {
+.section-contact
+    .content-contact
+    .carousel-container
+    .carousel
+    .carousel-slide.active {
     z-index: 2;
     opacity: 1;
 }
 
-.section-contact .content-contact .carousel-container .carousel .carousel-slide.active img {
+.section-contact
+    .content-contact
+    .carousel-container
+    .carousel
+    .carousel-slide.active
+    img {
     transform: scale(1.2);
     opacity: 1;
 }
@@ -879,12 +889,14 @@ header {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(45deg,
-            #feda75,
-            #fa7e1e,
-            #d62976,
-            #962fbf,
-            #4f5bd5);
+    background: linear-gradient(
+        45deg,
+        #feda75,
+        #fa7e1e,
+        #d62976,
+        #962fbf,
+        #4f5bd5
+    );
     display: flex;
     justify-content: center;
     align-items: center;
@@ -894,8 +906,6 @@ header {
     width: 30px;
     height: 30px;
 }
-
-
 
 /* ----------------- INICIO DAS ESTILIZAÇÕES DO RODAPÉ ----------------- */
 footer {
@@ -918,10 +928,13 @@ footer {
     padding-bottom: 10px;
     margin-bottom: 20px;
     border-bottom: 2px solid;
-    border-image: linear-gradient(90deg,
+    border-image: linear-gradient(
+            90deg,
             rgba(60, 74, 83, 0.678),
             #e6e6e6,
-            rgba(60, 74, 83, 0.582)) 1;
+            rgba(60, 74, 83, 0.582)
+        )
+        1;
 }
 
 .section-footer .content-footer .content-01 p {
@@ -985,11 +998,9 @@ footer {
     transition: transform 0.3s, background-color 0.3s;
 }
 
-#menu-nav.active+.section-footer .btn-whats {
+#menu-nav.active + .section-footer .btn-whats {
     display: none;
 }
-
-
 
 /* ----------------- INICIO DAS ADAPTAÇÕES DE TELAS MENORES ----------------- */
 
@@ -1029,12 +1040,8 @@ footer {
     }
 }
 
-
-
-
 /* -------------------------- MIN 768 PX --------------------------  */
 @media screen and (min-width: 768px) {
-
     /* ---------BOTÃO HAMBURGUER-----------  */
     #menu-nav .imagem img {
         margin-top: 15px;
@@ -1180,7 +1187,12 @@ footer {
         width: 100%;
     }
 
-    .section-contact .content-contact .carousel-container .carousel .carousel-slide img {
+    .section-contact
+        .content-contact
+        .carousel-container
+        .carousel
+        .carousel-slide
+        img {
         width: 280px;
         height: 430px;
     }
@@ -1203,11 +1215,8 @@ footer {
     }
 }
 
-
-
 /* -------------------------- MIN 1023 PX --------------------------  */
 @media screen and (min-width: 1023px) {
-
     .secao-limitada {
         max-width: 1024px;
         margin: 0 auto;
@@ -1420,7 +1429,6 @@ footer {
         top: 50%;
     }
 
-
     /* --------------------------SEÇÃO LINKS--------------------------  */
     .section-links {
         background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)),
@@ -1436,7 +1444,12 @@ footer {
         height: 70vh;
     }
 
-    .section-contact .content-contact .carousel-container .carousel .carousel-slide img {
+    .section-contact
+        .content-contact
+        .carousel-container
+        .carousel
+        .carousel-slide
+        img {
         height: 45vh;
     }
 
@@ -1466,7 +1479,6 @@ footer {
 
 /* -------------------------- MIN 1023 PX --------------------------  */
 @media screen and (min-width: 1400px) {
-
     .secao-limitada2 {
         max-width: 1200px;
         margin-left: 120px;
