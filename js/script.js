@@ -140,7 +140,7 @@ function updateCarousel() {
     const slides = document.querySelectorAll(".carousel-slide");
     const container = document.querySelector(".carousel-container");
     const containerWidth = container.offsetWidth;
-    const slideWidth = 250; // Largura base do slide (sem escala)
+    const slideWidth = 262; // Largura base do slide (sem escala)
     const centerPosition = containerWidth / 2; // Centro do container
 
     slides.forEach((slide, index) => {

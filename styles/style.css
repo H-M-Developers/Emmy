@@ -1119,6 +1119,7 @@ footer {
     /* -----------SLIDER CAROUSEL-----------  */
     .sobre .slider-carousel {
         height: 100%;
+        margin-top: 350px;
     }
 
     .sobre .slider-carousel .slider-container .slider-card {
@@ -1140,6 +1141,11 @@ footer {
     .sobre .slider-carousel .slider-container .slider-card p {
         font-size: 18px;
         line-height: 20px;
+    }
+
+    .slider-prev,
+    .slider-next {
+        top: 65%;
     }
 
     /* --------------------------SEÇÃO LINKS--------------------------  */
@@ -1207,6 +1213,10 @@ footer {
         margin: 0 auto;
     }
 
+    .secao-limitada2 {
+        max-width: 1024px;
+    }
+
     /* Esconde o botão hambúrguer */
     .section-header .content-header .null,
     .hamburger-menu,
@@ -1226,14 +1236,11 @@ footer {
         display: flex;
         flex-direction: row;
         position: static;
-        width: auto;
         height: auto;
         background: none;
         box-shadow: none;
         border-radius: 0;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 20px;
+        justify-content: space-between;
     }
 
     #menu-nav ul {
@@ -1247,6 +1254,7 @@ footer {
         border: none;
         margin: 0;
         padding: 0;
+        margin-left: 15px;
     }
 
     #menu-nav li a {
@@ -1256,10 +1264,32 @@ footer {
         padding: 10px 15px;
         transition: color 0.3s ease;
         letter-spacing: 2px;
+        position: relative;
     }
 
     #menu-nav li a:hover {
         color: #ffe0a7;
+    }
+
+    #menu-nav li a::before {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 2px;
+        bottom: 8px;
+        left: -4px;
+        background-color: #dddddd;
+        transition: all 0.3s ease-in-out 0s;
+    }
+
+    #menu-nav li a:hover {
+        color: #dddddd;
+        transition: 500ms;
+    }
+
+    #menu-nav li a:hover::before {
+        width: 100%;
+        background-color: #ffe0a7;
     }
 
     header {
@@ -1331,14 +1361,16 @@ footer {
     }
 
     .section-banner .content-banner h1 {
-        font-size: 70px;
-        text-align: center;
+        font-size: 60px;
+        text-align: left;
+        margin-left: 50px;
         letter-spacing: 15px;
     }
 
     .section-banner .content-banner p {
         font-size: 25px;
-        text-align: center;
+        text-align: left;
+        margin-left: 50px;
         letter-spacing: 25px;
     }
 
@@ -1383,6 +1415,11 @@ footer {
         font-size: 16px;
     }
 
+    .slider-prev,
+    .slider-next {
+        top: 50%;
+    }
+
 
     /* --------------------------SEÇÃO LINKS--------------------------  */
     .section-links {
@@ -1424,5 +1461,14 @@ footer {
 
     .section-contact .content-contact .section-map .icons-link {
         padding-bottom: 50px;
+    }
+}
+
+/* -------------------------- MIN 1023 PX --------------------------  */
+@media screen and (min-width: 1400px) {
+
+    .secao-limitada2 {
+        max-width: 1200px;
+        margin-left: 120px;
     }
 }
