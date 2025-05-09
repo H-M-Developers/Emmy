@@ -174,10 +174,6 @@ header {
     transition: transform 0.3s ease;
 }
 
-#menu-nav .close-menu:hover {
-    transform: scale(1.2);
-}
-
 #menu-nav.active {
     display: flex;
 }
@@ -395,11 +391,6 @@ header {
     position: relative;
 }
 
-.sobre .slider-carousel .slider-container .slider-card:hover {
-    transform: scale(1.05);
-    transition: 0.3s;
-}
-
 .sobre .slider-carousel .slider-container .slider-card .slider-image {
     width: 100px;
     height: 100px;
@@ -453,11 +444,6 @@ header {
 .slider-next {
     right: 10px;
     z-index: 4;
-}
-
-.slider-prev:hover,
-.slider-next:hover {
-    background-color: #00000023;
 }
 
 /* ----------------- INICIO DAS ESTILIZAÇÕES DA SEÇÃO LINKS ----------------- */
@@ -519,13 +505,6 @@ header {
 
     transition: 0.3s;
     border: 2px solid #ffe0a7;
-}
-
-.section-links .content-links .links .card-links:hover {
-    background-color: #ffe0a71c;
-    transform: scale(1.01);
-    transition: 300ms;
-    cursor: pointer;
 }
 
 .section-links .content-links .links .card-links a {
@@ -700,11 +679,6 @@ header {
 
 .carousel-next {
     right: 10px;
-}
-
-.carousel-prev:hover,
-.carousel-next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .popup {
@@ -990,12 +964,6 @@ footer {
     width: 40px;
     bottom: 10px;
     right: 9px;
-}
-
-.section-footer .content-footer .btn-whats:hover {
-    background-color: #128c7e;
-    transform: scale(1.2);
-    transition: transform 0.3s, background-color 0.3s;
 }
 
 #menu-nav.active + .section-footer .btn-whats {
@@ -1474,6 +1442,38 @@ footer {
 
     .section-contact .content-contact .section-map .icons-link {
         padding-bottom: 50px;
+    }
+
+    #menu-nav .close-menu:hover {
+        transform: scale(1.2);
+    }
+
+    .sobre .slider-carousel .slider-container .slider-card:hover {
+        transform: scale(1.05);
+        transition: 0.3s;
+    }
+
+    .slider-prev:hover,
+    .slider-next:hover {
+        background-color: #00000023;
+    }
+
+    .section-links .content-links .links .card-links:hover {
+        background-color: #ffe0a71c;
+        transform: scale(1.01);
+        transition: 300ms;
+        cursor: pointer;
+    }
+
+    .carousel-prev:hover,
+    .carousel-next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .section-footer .content-footer .btn-whats:hover {
+        background-color: #128c7e;
+        transform: scale(1.2);
+        transition: transform 0.3s, background-color 0.3s;
     }
 }
 
