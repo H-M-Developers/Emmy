@@ -75,7 +75,7 @@ body {
 }
 
 /* ----------------- INICIO DE ESTILIZAÇÃO DO HEADER ----------------- */
-header {
+/* header {
     background: linear-gradient(to right, #000000 10%, #3f3f3f 100%);
 }
 
@@ -108,22 +108,37 @@ header {
 
 .section-header .content-header .content-header-left img {
     max-width: 50%;
-}
+} */
 
 
 
 /* ----------------- INICIO DAS ESTILIZAÇÕES DO BANNER ----------------- */
-.section-banner {
+/* .section-banner {
     background: url("../assets/banner.webp") no-repeat center center/contain,
         linear-gradient(to right, rgb(0, 0, 0), rgb(63, 63, 63));
     background-size: auto 75%;
     background-position: bottom;
-}
+} */
 
 .section-banner {
-    height: 83vh;
-    padding: 40px 0;
+    background-image: url("../assets/MOBILE-Links-da-Bio.jpg");
+    background-position: top center;
+    background-size: cover;
+
+    padding-top: 300px;
+    padding-bottom: 50px;
 }
+
+/* .section-banner .banner-img {
+    width: 100%;
+    height: 100%;
+}
+
+.section-banner .banner-img figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
 
 .section-banner .content-banner {
     height: 100%;
@@ -134,14 +149,13 @@ header {
 
 .section-banner .content-banner .content-inf-banner {
     text-align: center;
-    background-color: #0000008e;
     width: 90%;
     margin: 0 auto;
 }
 
 .section-banner .content-banner .content-inf-banner h2 {
     font-size: 32px;
-    letter-spacing: 10px;
+    letter-spacing: 8px;
     font-weight: normal;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.699);
@@ -149,11 +163,11 @@ header {
 
 .section-banner .content-banner .content-inf-banner h3 {
     font-size: 25px;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
     font-weight: normal;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.699);
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
 .section-banner .content-banner .content-inf-banner p span {
@@ -162,9 +176,10 @@ header {
     width: 100%;
     font-weight: bold;
     line-height: normal;
-    font-size: 15px;
+    font-size: 18px;
     border-bottom: 0.5px solid #cccccc;
     letter-spacing: 6px;
+    margin: 12px 0 12px 0;
 }
 
 .section-banner .content-banner .content-inf-banner .botao-comprar {
@@ -177,6 +192,37 @@ header {
     text-decoration: none;
 }
 
+
+/* -----Botão Pulsar no efeito de comprar----- */
+.section-banner .content-banner .content-inf-banner .botao-comprar a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    animation: pulsar 1.5s infinite;
+}
+
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+}
+
+/* ----- FIM Botão Pulsar no efeito de comprar----- */
+
 .section-banner .content-banner .content-inf-banner .botao-comprar a p {
     color: #000;
     font-weight: bold;
@@ -184,6 +230,94 @@ header {
     background-color: #e8c87f;
     padding: 15px;
     border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 3px;
+}
+
+
+
+/* ----------Incio das Estilizações da seção 01---------- */
+.secao01 {
+    background-color: #000000;
+    width: 100%;
+    height: 100%;
+
+    border-top: 1px solid;
+    border-image: linear-gradient(90deg, rgba(60, 74, 83, 0), #FFC800, rgba(60, 74, 83, 0)) 1;
+}
+
+.secao01 .content-secao01 {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.secao01 .content-secao01 .secao01-text {
+    padding-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    height: 100%;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.secao01 .content-secao01 .secao01-text h2 {
+    color: #fff;
+    font-weight: bold;
+    font-size: 28px;
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+.secao01 .content-secao01 .secao01-text .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.secao01 .content-secao01 .secao01-text .cards .card {
+    border: 1px solid #e8c87f;
+    border-radius: 7px;
+    padding: 20px;
+    width: 98%;
+    margin: 0 auto;
+}
+
+.secao01 .content-secao01 .secao01-text .cards .card p {
+    color: #fff;
+    font-size: 20px;
+}
+
+.secao01 .content-secao01 .secao01-text .cards .impar {
+    margin-left: 0px;
+}
+
+.secao01 .content-secao01 .secao01-text .cards .par {
+    margin-right: 0px;
+    /* Desloca para a direita */
+}
+
+.secao01 .content-secao01 .secao01-text .botao-comprar {
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 70px;
+}
+
+.secao01 .content-secao01 .secao01-text .botao-comprar a {
+    text-decoration: none;
+}
+
+.secao01 .content-secao01 .secao01-text .botao-comprar a p {
+    color: #000;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #e8c87f;
+    padding: 15px;
+    border-radius: 7px;
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 3px;
 }
