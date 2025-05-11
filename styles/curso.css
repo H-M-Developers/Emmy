@@ -74,52 +74,9 @@ body {
     }
 }
 
-/* ----------------- INICIO DE ESTILIZAÇÃO DO HEADER ----------------- */
-/* header {
-    background: linear-gradient(to right, #000000 10%, #3f3f3f 100%);
-}
-
-.section-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-}
-
-.section-header .content-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    width: 90%;
-    margin: 0 auto;
-}
-
-.section-header .content-header .null {
-    width: 90px;
-}
-
-.section-header .content-header .content-header-left {
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    object-fit: cover;
-}
-
-.section-header .content-header .content-header-left img {
-    max-width: 50%;
-} */
 
 
-
-/* ----------------- INICIO DAS ESTILIZAÇÕES DO BANNER ----------------- */
-/* .section-banner {
-    background: url("../assets/banner.webp") no-repeat center center/contain,
-        linear-gradient(to right, rgb(0, 0, 0), rgb(63, 63, 63));
-    background-size: auto 75%;
-    background-position: bottom;
-} */
-
+/* ----------Incio das Estilizações da seção BANNER---------- */
 .section-banner {
     background-image: url("../assets/MOBILE-Links-da-Bio.jpg");
     background-position: top center;
@@ -128,17 +85,6 @@ body {
     padding-top: 300px;
     padding-bottom: 50px;
 }
-
-/* .section-banner .banner-img {
-    width: 100%;
-    height: 100%;
-}
-
-.section-banner .banner-img figure img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-} */
 
 .section-banner .content-banner {
     height: 100%;
@@ -221,8 +167,6 @@ body {
     }
 }
 
-/* ----- FIM Botão Pulsar no efeito de comprar----- */
-
 .section-banner .content-banner .content-inf-banner .botao-comprar a p {
     color: #000;
     font-weight: bold;
@@ -236,7 +180,7 @@ body {
 
 
 
-/* ----------Incio das Estilizações da seção 01---------- */
+/* ----------Incio das Estilizações da SEÇÃO 01---------- */
 .secao01 {
     background-color: #000000;
     width: 100%;
@@ -281,15 +225,15 @@ body {
 
 .secao01 .content-secao01 .secao01-text .cards .card {
     border: 1px solid #e8c87f;
-    border-radius: 7px;
-    padding: 20px;
-    width: 98%;
+    border-radius: 8px;
+    padding: 17px;
+    width: 95%;
     margin: 0 auto;
 }
 
 .secao01 .content-secao01 .secao01-text .cards .card p {
     color: #fff;
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .secao01 .content-secao01 .secao01-text .cards .impar {
@@ -298,17 +242,25 @@ body {
 
 .secao01 .content-secao01 .secao01-text .cards .par {
     margin-right: 0px;
-    /* Desloca para a direita */
 }
 
 .secao01 .content-secao01 .secao01-text .botao-comprar {
-    width: 40%;
+    width: 80%;
     margin: 0 auto;
-    margin-top: 70px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .secao01 .content-secao01 .secao01-text .botao-comprar a {
     text-decoration: none;
+
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    animation: pulsar 1.5s infinite;
 }
 
 .secao01 .content-secao01 .secao01-text .botao-comprar a p {
@@ -317,7 +269,618 @@ body {
     font-size: 15px;
     background-color: #e8c87f;
     padding: 15px;
-    border-radius: 7px;
+    border-radius: 10px;
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 3px;
+}
+
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+}
+
+
+
+/* ----------Incio das Estilizações da SEÇÃO 02---------- */
+.secao02 {
+    background-color: #000000;
+    width: 100%;
+    height: 100%;
+
+    border-top: 1px solid;
+    border-image: linear-gradient(90deg, rgba(60, 74, 83, 0), #FFC800, rgba(60, 74, 83, 0)) 1;
+}
+
+.secao02 .content-secao02 {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.secao02 .content-secao02 .secao02-text {
+    text-align: center;
+}
+
+.secao02 .content-secao02 .secao02-text h2 {
+    color: #fff;
+    font-weight: bold;
+    font-size: 28px;
+    letter-spacing: 3px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+
+    margin-top: 50px;
+}
+
+.secao02 .content-secao02 .secao02-text .carrousel-card {
+    position: relative;
+
+    width: 90%;
+    margin: 0 auto;
+    height: 65vh;
+
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.secao02 .content-secao02 .secao02-text .carrousel-card .section-cards {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    overflow: hidden;
+    /* Garante que imagens fora do contêiner não sejam visíveis */
+}
+
+.secao02 .content-secao02 .secao02-text .carrousel-card .section-cards .card {
+    /* position: absolute; */
+
+    transition: all 0.5s ease;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.secao02 .content-secao02 .secao02-text .carrousel-card .section-cards .card img {
+    width: 250px;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    border: 2px solid #ffe0a7;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.404);
+}
+
+.secao02 .content-secao02 .secao02-text .carrousel-card .section-cards .card.active {
+    opacity: 1;
+    transform: scale(1.2);
+    /* Destaca a imagem ativa */
+    z-index: 2;
+}
+
+.secao02 .content-secao02 .secao02-text .carrousel-card .section-cards .card.active img {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.cards-prev,
+.cards-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards-prev {
+    left: 10px;
+}
+
+.cards-next {
+    right: 10px;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    touch-action: pan-y;
+    /* Permite deslizar horizontalmente sem interferir no scroll vertical */
+}
+
+.popup.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-content {
+    max-width: 90%;
+    max-height: 80%;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.popup-prev,
+.popup-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.popup-prev {
+    left: 20px;
+}
+
+.popup-next {
+    right: 20px;
+}
+
+.secao02 .content-secao02 .secao02-text .botao-comprar {
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+.secao02 .content-secao02 .secao02-text .botao-comprar a {
+    text-decoration: none;
+
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    animation: pulsar 1.5s infinite;
+}
+
+.secao02 .content-secao02 .secao02-text .botao-comprar a p {
+    color: #000;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #e8c87f;
+    padding: 15px;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 3px;
+}
+
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+}
+
+
+
+/* ----------Incio das Estilizações da SEÇÃO 03---------- */
+.secao03 {
+    background-color: #000000;
+    width: 100%;
+    height: 100%;
+
+    border-top: 1px solid;
+    border-image: linear-gradient(90deg, rgba(60, 74, 83, 0), #FFC800, rgba(60, 74, 83, 0)) 1;
+}
+
+.secao03 .content-secao03 {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.secao03 .content-secao03 h2 {
+    color: #fff;
+    font-weight: bold;
+    font-size: 28px;
+    letter-spacing: 3px;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.secao03 .content-secao03 .depoiments {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.secao03 .content-secao03 .depoiments .depoiments-text {
+    background-color: #F5F5F5;
+    border-radius: 20px;
+    text-align: left;
+    transition: transform 0.3s ease;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 25px 20px;
+    color: #333;
+}
+
+.secao03 .content-secao03 .depoiments .depoiments-text:hover {
+    transform: translateY(-5px);
+}
+
+.secao03 .content-secao03 .depoiments .depoiments-text .dados-pessoais {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.secao03 .content-secao03 .depoiments .depoiments-text .dados-pessoais a img {
+    width: 28px;
+    height: 28px;
+}
+
+.secao03 .content-secao03 .depoiments .depoiments-text .dados-pessoais a p {
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    font-size: 16px;
+}
+
+.secao03 .content-secao03 .depoiments .depoiments-text .depoimento p {
+    font-style: italic;
+    color: #555;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+
+
+/* ----------Incio das Estilizações da SEÇÃO 04---------- */
+.secao04 {
+    background-color: #000000;
+    width: 100%;
+    height: 100%;
+
+    border-top: 1px solid;
+    border-image: linear-gradient(90deg, rgba(60, 74, 83, 0), #FFC800, rgba(60, 74, 83, 0)) 1;
+}
+
+.secao04 .content-section04 {
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.secao04 .content-section04 h2 {
+    color: #fff;
+    font-weight: bold;
+    font-size: 28px;
+    letter-spacing: 3px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+
+    margin-top: 50px;
+}
+
+.secao04 .content-section04 .section04-text {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.secao04 .content-section04 .section04-text h3 {
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 3px;
+    width: 100%;
+    text-align: start;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.secao04 .content-section04 .section04-text p {
+    color: #cccccc;
+    font-size: 16px;
+    letter-spacing: 3px;
+    line-height: 22px;
+    width: 80%;
+    text-align: start;
+    margin: 0 auto;
+}
+
+.secao04 .content-section04 .botao-comprar {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.secao04 .content-section04 .botao-comprar a {
+    text-decoration: none;
+
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    animation: pulsar 1.5s infinite;
+}
+
+.secao04 .content-section04 .botao-comprar a p {
+    color: #000;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #e8c87f;
+    padding: 15px;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 3px;
+}
+
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+}
+
+
+
+/* ----------Incio das Estilizações da SEÇÃO 05---------- */
+.secao05 {
+    background-color: #000000;
+    width: 100%;
+    height: 100%;
+
+    border-top: 1px solid;
+    border-image: linear-gradient(90deg, rgba(60, 74, 83, 0), #FFC800, rgba(60, 74, 83, 0)) 1;
+}
+
+.secao05 .content-secao-05 {
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 25px;
+}
+
+.secao05 .content-secao-05 h2 {
+    color: #fff;
+    font-weight: bold;
+    font-size: 28px;
+    letter-spacing: 3px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+
+    margin-top: 50px;
+}
+
+.secao05 .content-secao-05 h2 span {
+    color: #e8c87f;
+    font-weight: bold;
+    font-size: 32px;
+    letter-spacing: 3px;
+
+}
+
+.secao05 .content-secao-05 .section05-text {
+    border: 1px solid #e8c87f;
+    border-radius: 10px;
+    margin-top: 25px;
+    padding: 120px 20px 120px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.secao05 .content-secao-05 .section05-text .text p {
+    color: #fff;
+    font-size: 18px;
+    margin: 0;
+}
+
+.secao05 .content-secao-05 .section05-text .text .span {
+    color: #e8c87f;
+    font-weight: bold;
+    font-size: 44px;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+.secao05 .content-secao-05 .section05-text .botao-comprar2 {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 100px;
+    text-align: center;
+
+}
+
+.secao05 .content-secao-05 .section05-text .botao-comprar2 a {
+    text-decoration: none;
+
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    animation: pulsar 1.5s infinite;
+}
+
+.secao05 .content-secao-05 .section05-text .botao-comprar2 a p {
+    color: #000;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #e8c87f;
+    padding: 15px;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 3px;
+}
+
+
+
+/* ----------Incio das Estilizações da SEÇÃO FOOTER---------- */
+footer {
+    background-color: #000000f5;
+}
+
+.section-footer {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.section-footer .content-footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.section-footer .content-footer .content-01 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(90deg,
+            rgba(60, 74, 83, 0.678),
+            #e6e6e6,
+            rgba(60, 74, 83, 0.582)) 1;
+}
+
+.section-footer .content-footer .content-01 p {
+    color: #dddddd;
+    font-size: 22px;
+}
+
+.section-footer .content-footer .content-01 p {
+    font-size: 15px;
+    margin-top: 10px;
+    color: #dddddd;
+}
+
+.section-footer .content-footer a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.section-footer .content-footer .section-dev .content-dev a p {
+    color: #dddddd8a;
+    padding-top: 0;
+}
+
+.section-footer .content-footer .section-dev .content-dev a p span {
+    color: #ddddddb0;
+    padding-top: 0;
+}
+
+.section-footer .content-footer .btn-whats {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: #25d366;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.section-footer .content-footer .btn-whats img {
+    position: absolute;
+    width: 40px;
+    bottom: 10px;
+    right: 9px;
+}
+
+#menu-nav.active+.section-footer .btn-whats {
+    display: none;
 }

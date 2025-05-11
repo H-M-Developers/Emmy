@@ -608,23 +608,14 @@ header {
     justify-content: space-between;
 }
 
-.section-contact
-    .content-contact
-    .carousel-container
-    .carousel
-    .carousel-slide {
+.section-contact .content-contact .carousel-container .carousel .carousel-slide {
     position: absolute;
     transition: all 0.5s ease;
     opacity: 0.5;
     cursor: pointer;
 }
 
-.section-contact
-    .content-contact
-    .carousel-container
-    .carousel
-    .carousel-slide
-    img {
+.section-contact .content-contact .carousel-container .carousel .carousel-slide img {
     width: 250px;
     height: 330px;
     object-fit: cover;
@@ -634,21 +625,12 @@ header {
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.404);
 }
 
-.section-contact
-    .content-contact
-    .carousel-container
-    .carousel
-    .carousel-slide.active {
+.section-contact .content-contact .carousel-container .carousel .carousel-slide.active {
     z-index: 2;
     opacity: 1;
 }
 
-.section-contact
-    .content-contact
-    .carousel-container
-    .carousel
-    .carousel-slide.active
-    img {
+.section-contact .content-contact .carousel-container .carousel .carousel-slide.active img {
     transform: scale(1.2);
     opacity: 1;
 }
@@ -863,14 +845,12 @@ header {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(
-        45deg,
-        #feda75,
-        #fa7e1e,
-        #d62976,
-        #962fbf,
-        #4f5bd5
-    );
+    background: linear-gradient(45deg,
+            #feda75,
+            #fa7e1e,
+            #d62976,
+            #962fbf,
+            #4f5bd5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -902,13 +882,10 @@ footer {
     padding-bottom: 10px;
     margin-bottom: 20px;
     border-bottom: 2px solid;
-    border-image: linear-gradient(
-            90deg,
+    border-image: linear-gradient(90deg,
             rgba(60, 74, 83, 0.678),
             #e6e6e6,
-            rgba(60, 74, 83, 0.582)
-        )
-        1;
+            rgba(60, 74, 83, 0.582)) 1;
 }
 
 .section-footer .content-footer .content-01 p {
@@ -966,7 +943,7 @@ footer {
     right: 9px;
 }
 
-#menu-nav.active + .section-footer .btn-whats {
+#menu-nav.active+.section-footer .btn-whats {
     display: none;
 }
 
@@ -1010,6 +987,7 @@ footer {
 
 /* -------------------------- MIN 768 PX --------------------------  */
 @media screen and (min-width: 768px) {
+
     /* ---------BOTÃO HAMBURGUER-----------  */
     #menu-nav .imagem img {
         margin-top: 15px;
@@ -1155,12 +1133,7 @@ footer {
         width: 100%;
     }
 
-    .section-contact
-        .content-contact
-        .carousel-container
-        .carousel
-        .carousel-slide
-        img {
+    .section-contact .content-contact .carousel-container .carousel .carousel-slide img {
         width: 280px;
         height: 430px;
     }
@@ -1412,12 +1385,7 @@ footer {
         height: 70vh;
     }
 
-    .section-contact
-        .content-contact
-        .carousel-container
-        .carousel
-        .carousel-slide
-        img {
+    .section-contact .content-contact .carousel-container .carousel .carousel-slide img {
         height: 45vh;
     }
 

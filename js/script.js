@@ -308,3 +308,103 @@ function handleSwipe() {
         navigatePopup(-1);
     }
 }
+
+
+
+// EFEITOS DO CARROSEL
+// ...existing code...
+
+
+// Configuração da galeria na seção 02
+document.addEventListener("DOMContentLoaded", () => {
+    const galleryContainer = document.querySelector(".secao02 .carrousel-card .section-cards");
+    const gallerySlides = document.querySelectorAll(".secao02 .carrousel-card .section-cards .card");
+    const prevButton = document.querySelector(".secao02 .cards-prev");
+    const nextButton = document.querySelector(".secao02 .cards-next");
+
+    let currentSlide = 0;
+
+    // Atualiza a posição e estilo dos slides
+    function updateGallery() {
+        const containerWidth = galleryContainer.offsetWidth;
+        const slideWidth = 250; // Largura base do slide
+        const centerPosition = containerWidth / 2;
+    
+        gallerySlides.forEach((slide, index) => {
+            const offset = index - currentSlide;
+            const isActive = offset === 0;
+    
+            let position;
+            if (isActive) {
+                position = centerPosition - slideWidth / 2;
+            } else {
+                position = centerPosition - slideWidth / 2 + offset * (slideWidth + 20); // 20px é o gap
+            }
+    
+            slide.style.transform = `translateX(${position}px) ${isActive ? "scale(1.2)" : "scale(1)"}`;
+            slide.style.opacity = isActive ? "1" : "0.5";
+            slide.style.zIndex = isActive ? "2" : "1";
+            slide.classList.toggle("active", isActive);
+        });
+    }
+
+    // Navega entre os slides
+    function changeGallerySlide(direction) {
+        currentSlide = (currentSlide + direction + gallerySlides.length) % gallerySlides.length;
+        updateGallery();
+    }
+
+    // Inicializa a galeria
+    updateGallery();
+
+    // Eventos dos botões
+    prevButton.addEventListener("click", () => changeGallerySlide(-1));
+    nextButton.addEventListener("click", () => changeGallerySlide(1));
+
+    // Adiciona suporte para swipe (toque)
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    galleryContainer.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    galleryContainer.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        if (touchEndX < touchStartX - 50) {
+            changeGallerySlide(1); // Swipe para a esquerda
+        } else if (touchEndX > touchStartX + 50) {
+            changeGallerySlide(-1); // Swipe para a direita
+        }
+    }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".section-cards .card");
+    const prevButton = document.querySelector(".cards-prev");
+    const nextButton = document.querySelector(".cards-next");
+
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        cards.forEach((card, index) => {
+            card.style.transform = `translateX(${(index - currentIndex) * 100}%)`;
+            card.style.opacity = index === currentIndex ? "1" : "0.5";
+            card.classList.toggle("active", index === currentIndex);
+        });
+    }
+
+    function changeSlide(direction) {
+        currentIndex = (currentIndex + direction + cards.length) % cards.length;
+        updateCarousel();
+    }
+
+    prevButton.addEventListener("click", () => changeSlide(-1));
+    nextButton.addEventListener("click", () => changeSlide(1));
+
+    updateCarousel(); // Inicializa o carrossel
+});
