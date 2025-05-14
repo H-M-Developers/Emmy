@@ -1112,7 +1112,7 @@ footer {
     }
 
 
-    /* -----Seção Seção FOOTER----- */
+    /* -----Seção FOOTER----- */
     .section-footer .content-footer .content-01 p {
         font-size: 20px;
     }
@@ -1128,5 +1128,116 @@ footer {
 
     .section-footer .content-footer .btn-whats img {
         width: 55px;
+    }
+}
+
+
+
+/* ------------Versão Desktop------------ */
+@media screen and (min-width: 1023px) {
+
+    .section-limited {
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+
+
+    /* -----Seção Banner----- */
+    .section-banner {
+        background-image: url("../assets/DESKTOP-Links-da-Bio.jpg");
+
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .section-banner .content-banner {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .section-banner .content-banner .content-inf-banner {
+        width: 50%;
+        margin: 0;
+        margin-left: 20px;
+    }
+
+    .section-banner .content-banner .content-inf-banner .botao-comprar {
+        margin-top: 40px;
+    }
+
+
+    /* -----Seção Seção01----- */
+    .secao01 {
+        height: 100%;
+    }
+
+
+    /* -----Seção Seção 02----- */
+    .secao02 {
+        height: 100vh;
+    }
+
+
+    /* -----Seção Seção 03----- */
+    .secao03 .content-secao03 .depoiments {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+
+    .secao03 .content-secao03 .depoiments .depoiments-text {
+        background-color: #F5F5F5;
+        border-radius: 20px;
+        text-align: left;
+        transition: transform 0.3s ease;
+
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        padding: 25px 20px;
+        color: #333;
+    }
+
+    .secao03 .content-secao03 .depoiments .depoiments-text:hover {
+        transform: translateY(-5px);
+    }
+
+    .secao03 .content-secao03 .depoiments .depoiments-text .dados-pessoais {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 15px;
+    }
+
+    .secao03 .content-secao03 .depoiments .depoiments-text .dados-pessoais a img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .secao03 .content-secao03 .depoiments .depoiments-text .dados-pessoais a p {
+        font-weight: bold;
+        color: #333;
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .secao03 .content-secao03 .depoiments .depoiments-text .depoimento p {
+        font-style: italic;
+        color: #555;
+        line-height: 1.6;
+        font-size: 16px;
+    }
+
+
+    /* -----Seção Seção 04----- */
+    /* Sem estilizações a serem alteradas */
+
+
+    /* -----Seção Seção 05----- */
+    /* Sem estilizações a serem alteradas */
+
+
+    /* -----Seção Seção 05----- */
+    .secao05 .content-secao-05 .section05-text {
+        width: 40%;
     }
 }
