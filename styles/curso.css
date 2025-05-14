@@ -623,8 +623,8 @@ body {
     letter-spacing: 3px;
     width: 100%;
     text-align: center;
-    margin: 0 auto;
 
+    margin: 0 auto;
     margin-top: 50px;
 }
 
@@ -771,7 +771,6 @@ body {
     margin: 0 auto;
     padding-top: 100px;
     text-align: center;
-
 }
 
 .secao05 .content-secao-05 .section05-text .botao-comprar2 a {
@@ -783,7 +782,7 @@ body {
     color: white;
     border-radius: 10px;
     font-weight: bold;
-    animation: pulsar 1.5s infinite;
+    /* animation: pulsar 1.5s infinite; */
 }
 
 .secao05 .content-secao-05 .section05-text .botao-comprar2 a p {
@@ -827,11 +826,6 @@ footer {
 }
 
 .section-footer .content-footer .content-01 p {
-    color: #dddddd;
-    font-size: 22px;
-}
-
-.section-footer .content-footer .content-01 p {
     font-size: 15px;
     margin-top: 10px;
     color: #dddddd;
@@ -858,16 +852,21 @@ footer {
     position: fixed;
     bottom: 20px;
     right: 20px;
+
     z-index: 1000;
+
     background-color: #25d366;
     color: #fff;
     border: none;
     border-radius: 50%;
+
     width: 60px;
     height: 60px;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     font-size: 30px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     cursor: pointer;
@@ -883,4 +882,251 @@ footer {
 
 #menu-nav.active+.section-footer .btn-whats {
     display: none;
+}
+
+
+
+/* -----------Inicio das Medias Queries----------- */
+@media screen and (min-width: 768px) {
+
+    /* -----Seção Banner----- */
+    .section-banner {
+        background-size: auto;
+        height: 100vh;
+
+        padding-top: 550px;
+    }
+
+    .section-banner .content-banner {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .section-banner .content-banner .content-inf-banner {
+        padding: 20px 0;
+    }
+
+    .section-banner .content-banner .content-inf-banner h2 {
+        font-size: 62px;
+        letter-spacing: 10px;
+    }
+
+    .section-banner .content-banner .content-inf-banner h3 {
+        font-size: 35px;
+        letter-spacing: 3px;
+        margin-top: 10px;
+    }
+
+    .section-banner .content-banner .content-inf-banner p span {
+        font-size: 25px;
+        letter-spacing: 8px;
+    }
+
+    .section-banner .content-banner .content-inf-banner .botao-comprar {
+        margin-top: 40px;
+    }
+
+    .section-banner .content-banner .content-inf-banner .botao-comprar a p {
+        font-size: 22px;
+        padding: 20px;
+        letter-spacing: 4px;
+    }
+
+
+    /* -----Seção Seção 01----- */
+    .secao01 {
+        height: 100vh;
+    }
+
+    .secao01 .content-secao01 .secao01-text {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .secao01 .content-secao01 .secao01-text h2 {
+        font-size: 50px;
+        letter-spacing: 5px;
+        margin-bottom: 30px;
+    }
+
+    .secao01 .content-secao01 .secao01-text .cards .card p {
+        font-size: 22px;
+        letter-spacing: 5px;
+    }
+
+    .secao01 .content-secao01 .secao01-text .botao-comprar {
+        margin-top: 60px;
+    }
+
+    .secao01 .content-secao01 .secao01-text .botao-comprar a p {
+        font-size: 22px;
+        padding: 20px;
+        letter-spacing: 4px;
+    }
+
+
+    /* -----Seção Seção 02----- */
+    /* .secao02 {
+        background-color: #000000;
+        height: 100vh;
+    }     */
+
+    .secao02 .content-secao02 .secao02-text h2 {
+        font-size: 50px;
+        letter-spacing: 5px;
+        margin-bottom: 30px;
+    }
+
+    .secao02 .content-secao02 .secao02-text .botao-comprar {
+        /* margin-top: 40px; */
+        padding-bottom: 50px;
+    }
+
+    .secao02 .content-secao02 .secao02-text .botao-comprar a p {
+        font-size: 22px;
+        padding: 20px;
+        letter-spacing: 4px;
+    }
+
+
+    /* -----Seção Seção 03----- */
+    .secao03 .content-secao03 {
+        padding-bottom: 50px;
+        padding-top: 20px;
+
+    }
+
+    .secao03 .content-secao03 h2 {
+        font-size: 50px;
+        letter-spacing: 5px;
+        margin-bottom: 30px;
+    }
+
+    .secao03 .content-secao03 .depoiments {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .secao03 .content-secao03 .depoiments .depoiments-text .dados-pessoais a img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .secao03 .content-secao03 .depoiments .depoiments-text .dados-pessoais a p {
+        letter-spacing: 2px;
+        font-size: 22px;
+    }
+
+    .secao03 .content-secao03 .depoiments .depoiments-text .depoimento p {
+        letter-spacing: 2px;
+        font-size: 22px;
+    }
+
+
+    /* -----Seção Seção 04----- */
+    .secao04 .content-section04 {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .secao04 .content-section04 h2 {
+        font-size: 50px;
+        letter-spacing: 5px;
+        margin-bottom: 20px;
+        margin-top: 0;
+    }
+
+    .secao04 .content-section04 .section04-text {
+        padding-top: 0;
+    }
+
+    .secao04 .content-section04 .section04-text h3 {
+        font-size: 28px;
+        letter-spacing: 5px;
+        padding-top: 30px;
+    }
+
+    .secao04 .content-section04 .section04-text p {
+        font-size: 22px;
+        letter-spacing: 4px;
+    }
+
+    .secao04 .content-section04 .botao-comprar {
+        margin-top: 40px;
+        padding-bottom: 30px;
+    }
+
+    .secao04 .content-section04 .botao-comprar a p {
+        font-size: 22px;
+        padding: 20px;
+        letter-spacing: 4px;
+    }
+
+
+    /* -----Seção Seção 05----- */
+    .secao05 .content-secao-05 h2 {
+        font-size: 50px;
+        letter-spacing: 5px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+    .secao05 .content-secao-05 h2 span {
+        color: #e8c87f;
+        font-weight: bold;
+        font-size: 50px;
+        letter-spacing: 5px;
+    }
+
+    .secao05 .content-secao-05 .section05-text {
+        width: 60%;
+        margin: 0 auto;
+        border-radius: 10px;
+        margin-top: 25px;
+        padding: 100px 10px;
+
+    }
+
+    .secao05 .content-secao-05 .section05-text .text p {
+        font-size: 25px;
+        letter-spacing: 3px;
+    }
+
+    .secao05 .content-secao-05 .section05-text .text .span {
+        font-size: 64px;
+        letter-spacing: 5px;
+        margin: 0;
+    }
+
+    .secao05 .content-secao-05 .section05-text .botao-comprar2 {
+        margin-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .secao05 .content-secao-05 .section05-text .botao-comprar2 a p {
+        font-size: 22px;
+        padding: 20px;
+        letter-spacing: 4px;
+    }
+
+
+    /* -----Seção Seção FOOTER----- */
+    .section-footer .content-footer .content-01 p {
+        font-size: 20px;
+    }
+
+    .section-footer .content-footer .section-dev .content-dev a p {
+        font-size: 20px;
+    }
+
+    .section-footer .content-footer .btn-whats {
+        width: 80px;
+        height: 80px;
+    }
+
+    .section-footer .content-footer .btn-whats img {
+        width: 55px;
+    }
 }
