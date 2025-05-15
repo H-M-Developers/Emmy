@@ -519,11 +519,42 @@ header {
 .section-links .content-links .links .card-links a .image {
     width: 70px;
     height: 60px;
+    background-color: #128c7e;
 
     margin-right: 20px;
     border: 1px solid #15151531;
     border-radius: 50%;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.section-links .content-links .links .card-links a .card1 {
+    background-image: url(../assets/apostila.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+.section-links .content-links .links .card-links a .card2 {
+    background-image: url(../assets/Micropigmentação\ 2.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+.section-links .content-links .links .card-links a .card3 {
+    background-image: url(../assets/designer\ sobrancelhas.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+.section-links .content-links .links .card-links a .card4 {
+    background-image: url(../assets/lash\ lifiting.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+.section-links .content-links .links .card-links a .card5 {
+    background-image: url(../assets/brow-lamination.webp);
+    background-size: cover;
+    background-position: center;
 }
 
 .section-links .content-links .links .card-links a .image img {
@@ -754,7 +785,7 @@ header {
 }
 
 .section-contact .content-contact .section-map {
-    background-color: rgba(11, 11, 11, 0.5);
+    background-color: rgba(11, 11, 11, 0.1);
     border-radius: 10px;
     width: 95%;
     margin: 0 auto 20px auto;
@@ -1383,8 +1414,8 @@ footer {
 
     /* --------------------------SEÇÃO LINKS--------------------------  */
     .section-links {
-        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)),
-            url("../assets/mulher-jovem.webp");
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+            url("../assets/download.webp");
         background-repeat: no-repeat;
         background-position: center;
         background-attachment: fixed;

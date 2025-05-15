@@ -408,3 +408,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateCarousel(); // Inicializa o carrossel
 });
+
+
+
+
+// ------------------------FEITOS PAGINA DO CURSO------------------------
+// Efeitos de aparição ao rolar o scroll
+document.addEventListener("DOMContentLoaded", () => {
+    const elementsToAnimate = document.querySelectorAll(".animate-on-scroll");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target); // Para de observar após a animação
+            }
+        });
+    }, {
+        threshold: 0.1 // Define o quanto do elemento precisa estar visível
+    });
+
+    elementsToAnimate.forEach(element => {
+        observer.observe(element);
+    });
+});
