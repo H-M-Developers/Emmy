@@ -355,7 +355,6 @@ header {
     height: 450px;
     overflow: hidden;
     background-color: #f9f9f9;
-    /* position: relative; */
     margin-top: 250px;
     margin-bottom: 20px;
 
@@ -425,9 +424,9 @@ header {
 .slider-prev,
 .slider-next {
     position: absolute;
-    top: 60%;
+    top: 62%;
     transform: translateY(-50%);
-    background-color: #00000044;
+    background-color: #00000055;
     color: #fff;
     border: none;
     padding: 10px 15px;
@@ -1381,16 +1380,18 @@ footer {
         margin-left: 20px;
         margin-top: 0px;
         position: relative;
+    }
 
+    .sobre .slider-carousel .slider-container {
         -webkit-mask-image: linear-gradient(to right,
                 transparent,
-                black 2%,
-                black 88%,
+                rgb(0, 0, 0) 2%,
+                rgb(0, 0, 0) 78%,
                 transparent);
         mask-image: linear-gradient(to right,
                 transparent,
-                black 2%,
-                black 88%,
+                rgb(0, 0, 0) 2%,
+                rgb(0, 0, 0) 78%,
                 transparent);
     }
 
@@ -1492,5 +1493,25 @@ footer {
     .secao-limitada2 {
         max-width: 1200px;
         margin-left: 120px;
+    }
+}
+
+
+
+@media screen and (max-width: 400px) {
+
+    .slider-prev,
+    .slider-next {
+        position: absolute;
+        top: 72%;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 500px) {
+
+    .slider-prev,
+    .slider-next {
+        position: absolute;
+        top: 62%;
     }
 }
