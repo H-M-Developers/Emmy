@@ -78,7 +78,7 @@ body {
 
 /* ----------Incio das Estilizações da seção BANNER---------- */
 .section-banner {
-    background-image: url("../assets/MOBILE-Links-da-Bio.jpg");
+    background-image: url("../assets/banner-mobille.png");
     background-position: top center;
     background-size: cover;
 
@@ -1242,14 +1242,125 @@ footer {
     }
 }
 
-/* EFEITOS */
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(20px); /* Move o elemento ligeiramente para baixo */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
+@media screen and (min-width: 1240px) {
 
-.animate-on-scroll.visible {
-    opacity: 1;
-    transform: translateY(0); /* Retorna à posição original */
+    /* -----Seção BANNER----- */
+    .section-banner {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .section-banner .content-banner .content-inf-banner {
+        width: 33%;
+        margin-left: 50px;
+    }
+
+    .section-banner .content-banner .content-inf-banner h2 {
+        font-size: 50px;
+    }
+
+    .section-banner .content-banner .content-inf-banner h3 {
+        font-size: 30px;
+        letter-spacing: 3px;
+        margin-top: 10px;
+    }
+
+    .section-banner .content-banner .content-inf-banner p span {
+        font-size: 20px;
+    }
+
+    .section-banner .content-banner .content-inf-banner .botao-comprar a p {
+        font-size: 18px;
+        padding: 20px;
+        letter-spacing: 2px;
+    }
+
+
+    /* -----Seção SECAO01----- */
+    .secao01 .content-secao01 .secao01-text h2 {
+        font-size: 40px;
+        letter-spacing: 7px;
+    }
+
+    .secao01 .content-secao01 .secao01-text .botao-comprar a p {
+        font-size: 18px;
+        padding: 20px;
+        letter-spacing: 2px;
+    }
+
+
+    /* -----Seção SECAO02----- */
+    .secao02 .content-secao02 .secao02-text h2 {
+        font-size: 40px;
+        letter-spacing: 7px;
+    }
+
+    .secao02 .content-secao02 .secao02-text .botao-comprar a p {
+        font-size: 18px;
+        padding: 20px;
+        letter-spacing: 2px;
+    }
+
+
+    /* -----Seção SECAO03----- */
+    .secao03 .content-secao03 h2 {
+        font-size: 40px;
+        letter-spacing: 7px;
+    }
+
+
+    /* -----Seção SECAO04----- */
+    .secao04 .content-section04 h2 {
+        font-size: 40px;
+        letter-spacing: 7px;
+    }
+
+    .secao04 .content-section04 .section04-text h3 {
+        font-size: 25px;
+        letter-spacing: 5px;
+    }
+
+    .secao04 .content-section04 .section04-text p {
+        font-size: 18px;
+        letter-spacing: 3px;
+    }
+
+    .secao04 .content-section04 .botao-comprar a p {
+        font-size: 18px;
+        padding: 20px;
+        letter-spacing: 2px;
+    }
+
+
+    /* -----Seção SECAO05----- */
+    .secao05 .content-secao-05 h2 {
+        font-size: 40px;
+        letter-spacing: 7px;
+    }
+
+    .secao05 .content-secao-05 h2 span {
+        font-size: 50px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
