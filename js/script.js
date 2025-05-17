@@ -44,96 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 100); // Verifica a cada 100ms
 });
 
-const sliderContainer = document.querySelector(".slider-container");
-const sliderCards = document.querySelectorAll(".slider-card");
-const prevButton = document.querySelector(".slider-prev");
-const nextButton = document.querySelector(".slider-next");
-
-let currentIndex = 0; // Começa no primeiro card
-const cardWidth = sliderCards[0].offsetWidth;
-const maxIndex = sliderCards.length - 1; // Define o último índice permitido com base no número de cards
-
-// Ajustar a posição inicial
-sliderContainer.style.transform = `translateX(0px)`;
-
-// Função para atualizar a posição do slider
-function updateSliderPosition() {
-    sliderContainer.style.transition =
-        "transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)";
-    const offset = -currentIndex * cardWidth;
-    sliderContainer.style.transform = `translateX(${offset}px)`;
-}
-
-// Função para verificar limites
-function checkLimits() {
-    if (currentIndex <= 0) {
-        prevButton.disabled = true; // Desativa o botão "Anterior" no primeiro card
-    } else {
-        prevButton.disabled = false;
-    }
-
-    if (currentIndex >= maxIndex) {
-        nextButton.disabled = true; // Desativa o botão "Próximo" no último card
-    } else {
-        nextButton.disabled = false;
-    }
-}
-
-// Atualizar os limites no início
-checkLimits();
-
-// Eventos de toque
-let startX = 0;
-let currentX = 0;
-let isDragging = false;
-let deltaX = 0;
-
-sliderContainer.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-    isDragging = true;
-    sliderContainer.style.transition = "none"; // Remove a transição durante o arraste
-});
-
-sliderContainer.addEventListener("touchmove", (e) => {
-    if (!isDragging) return;
-    currentX = e.touches[0].clientX;
-    deltaX = currentX - startX;
-    const offset = -currentIndex * cardWidth + deltaX;
-    sliderContainer.style.transform = `translateX(${offset}px)`;
-});
-
-sliderContainer.addEventListener("touchend", () => {
-    isDragging = false;
-
-    // Determinar se o usuário deslizou para a esquerda ou direita
-    if (deltaX > 50 && currentIndex > 0) {
-        currentIndex--; // Deslizou para a direita
-    } else if (deltaX < -50 && currentIndex < maxIndex) {
-        currentIndex++; // Deslizou para a esquerda
-    }
-
-    updateSliderPosition();
-    checkLimits(); // Atualiza os limites após o deslizar
-    deltaX = 0; // Resetar o deltaX
-});
-
-// Eventos para os botões
-prevButton.addEventListener("click", () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateSliderPosition();
-        checkLimits(); // Atualiza os limites após clicar no botão
-    }
-});
-
-nextButton.addEventListener("click", () => {
-    if (currentIndex < maxIndex) {
-        currentIndex++;
-        updateSliderPosition();
-        checkLimits(); // Atualiza os limites após clicar no botão
-    }
-});
-
 let currentSlide = 0;
 
 function updateCarousel() {
@@ -309,16 +219,17 @@ function handleSwipe() {
     }
 }
 
-
-
 // EFEITOS DO CARROSEL
 // ...existing code...
 
-
 // Configuração da galeria na seção 02
 document.addEventListener("DOMContentLoaded", () => {
-    const galleryContainer = document.querySelector(".secao02 .carrousel-card .section-cards");
-    const gallerySlides = document.querySelectorAll(".secao02 .carrousel-card .section-cards .card");
+    const galleryContainer = document.querySelector(
+        ".secao02 .carrousel-card .section-cards"
+    );
+    const gallerySlides = document.querySelectorAll(
+        ".secao02 .carrousel-card .section-cards .card"
+    );
     const prevButton = document.querySelector(".secao02 .cards-prev");
     const nextButton = document.querySelector(".secao02 .cards-next");
 
@@ -329,19 +240,24 @@ document.addEventListener("DOMContentLoaded", () => {
         const containerWidth = galleryContainer.offsetWidth;
         const slideWidth = 250; // Largura base do slide
         const centerPosition = containerWidth / 2;
-    
+
         gallerySlides.forEach((slide, index) => {
             const offset = index - currentSlide;
             const isActive = offset === 0;
-    
+
             let position;
             if (isActive) {
                 position = centerPosition - slideWidth / 2;
             } else {
-                position = centerPosition - slideWidth / 2 + offset * (slideWidth + 20); // 20px é o gap
+                position =
+                    centerPosition -
+                    slideWidth / 2 +
+                    offset * (slideWidth + 20); // 20px é o gap
             }
-    
-            slide.style.transform = `translateX(${position}px) ${isActive ? "scale(1.2)" : "scale(1)"}`;
+
+            slide.style.transform = `translateX(${position}px) ${
+                isActive ? "scale(1.2)" : "scale(1)"
+            }`;
             slide.style.opacity = isActive ? "1" : "0.5";
             slide.style.zIndex = isActive ? "2" : "1";
             slide.classList.toggle("active", isActive);
@@ -350,7 +266,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Navega entre os slides
     function changeGallerySlide(direction) {
-        currentSlide = (currentSlide + direction + gallerySlides.length) % gallerySlides.length;
+        currentSlide =
+            (currentSlide + direction + gallerySlides.length) %
+            gallerySlides.length;
         updateGallery();
     }
 
@@ -392,7 +310,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateCarousel() {
         cards.forEach((card, index) => {
-            card.style.transform = `translateX(${(index - currentIndex) * 100}%)`;
+            card.style.transform = `translateX(${
+                (index - currentIndex) * 100
+            }%)`;
             card.style.opacity = index === currentIndex ? "1" : "0.5";
             card.classList.toggle("active", index === currentIndex);
         });
@@ -409,26 +329,124 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCarousel(); // Inicializa o carrossel
 });
 
-
-
-
 // ------------------------FEITOS PAGINA DO CURSO------------------------
 // Efeitos de aparição ao rolar o scroll
 document.addEventListener("DOMContentLoaded", () => {
     const elementsToAnimate = document.querySelectorAll(".animate-on-scroll");
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-                observer.unobserve(entry.target); // Para de observar após a animação
-            }
-        });
-    }, {
-        threshold: 0.1 // Define o quanto do elemento precisa estar visível
-    });
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target); // Para de observar após a animação
+                }
+            });
+        },
+        {
+            threshold: 0.1, // Define o quanto do elemento precisa estar visível
+        }
+    );
 
-    elementsToAnimate.forEach(element => {
+    elementsToAnimate.forEach((element) => {
         observer.observe(element);
     });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Seleciona apenas o carrossel da seção SOBRE
+    const sobreSlider = document.querySelector(
+        ".sobre .slider-carousel .slider-container"
+    );
+    const sobreCards = document.querySelectorAll(
+        ".sobre .slider-carousel .slider-card"
+    );
+    const sobrePrev = document.querySelector(
+        ".sobre .slider-carousel .slider-prev"
+    );
+    const sobreNext = document.querySelector(
+        ".sobre .slider-carousel .slider-next"
+    );
+
+    if (!sobreSlider || sobreCards.length === 0) return;
+
+    let currentIndex = 0;
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+    let deltaX = 0;
+    const maxIndex = sobreCards.length - 1;
+
+    function getCardWidth() {
+        return sobreCards[0].offsetWidth;
+    }
+
+    function updateSliderPosition() {
+        sobreSlider.style.transition =
+            "transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)";
+        const offset = -currentIndex * getCardWidth();
+        sobreSlider.style.transform = `translateX(${offset}px)`;
+    }
+
+    function checkLimits() {
+        if (sobrePrev) sobrePrev.disabled = currentIndex <= 0;
+        if (sobreNext) sobreNext.disabled = currentIndex >= maxIndex;
+    }
+
+    // Inicializa posição
+    updateSliderPosition();
+    checkLimits();
+
+    sobreSlider.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+        sobreSlider.style.transition = "none";
+    });
+
+    sobreSlider.addEventListener(
+        "touchmove",
+        (e) => {
+            if (!isDragging) return;
+            currentX = e.touches[0].clientX;
+            deltaX = currentX - startX;
+            if (Math.abs(deltaX) > 10) e.preventDefault();
+            const offset = -currentIndex * getCardWidth() + deltaX;
+            sobreSlider.style.transform = `translateX(${offset}px)`;
+        },
+        { passive: false }
+    );
+
+    sobreSlider.addEventListener("touchend", () => {
+        isDragging = false;
+        sobreSlider.style.transition =
+            "transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)";
+        if (deltaX > 50 && currentIndex > 0) {
+            currentIndex--;
+        } else if (deltaX < -50 && currentIndex < maxIndex) {
+            currentIndex++;
+        }
+        updateSliderPosition();
+        checkLimits();
+        deltaX = 0;
+    });
+
+    // Botões
+    if (sobrePrev) {
+        sobrePrev.addEventListener("click", () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateSliderPosition();
+                checkLimits();
+            }
+        });
+    }
+    if (sobreNext) {
+        sobreNext.addEventListener("click", () => {
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+                updateSliderPosition();
+                checkLimits();
+            }
+        });
+    }
 });

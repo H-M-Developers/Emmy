@@ -74,8 +74,6 @@ body {
     }
 }
 
-
-
 /* ----------Incio das Estilizações da seção BANNER---------- */
 .section-banner {
     background-image: url("../assets/banner-mobille.png");
@@ -138,7 +136,6 @@ body {
     text-decoration: none;
 }
 
-
 /* -----Botão Pulsar no efeito de comprar----- */
 .section-banner .content-banner .content-inf-banner .botao-comprar a {
     display: inline-block;
@@ -178,8 +175,6 @@ body {
     letter-spacing: 3px;
 }
 
-
-
 /* ----------Incio das Estilizações da SEÇÃO 01---------- */
 .secao01 {
     background-color: #000000;
@@ -187,7 +182,13 @@ body {
     height: 100%;
 
     border-top: 1px solid;
-    border-image: linear-gradient(90deg, rgba(60, 74, 83, 0), #FFC800, rgba(60, 74, 83, 0)) 1;
+    border-image: linear-gradient(
+            90deg,
+            rgba(60, 74, 83, 0),
+            #ffc800,
+            rgba(60, 74, 83, 0)
+        )
+        1;
 }
 
 .secao01 .content-secao01 {
@@ -291,8 +292,6 @@ body {
     }
 }
 
-
-
 /* ----------Incio das Estilizações da SEÇÃO 02---------- */
 .secao02 {
     background-color: #000000;
@@ -300,7 +299,13 @@ body {
     height: 100%;
 
     border-top: 1px solid;
-    border-image: linear-gradient(90deg, rgba(60, 74, 83, 0), #FFC800, rgba(60, 74, 83, 0)) 1;
+    border-image: linear-gradient(
+            90deg,
+            rgba(60, 74, 83, 0),
+            #ffc800,
+            rgba(60, 74, 83, 0)
+        )
+        1;
 }
 
 .secao02 .content-secao02 {
@@ -360,7 +365,13 @@ body {
     cursor: pointer;
 }
 
-.secao02 .content-secao02 .secao02-text .carrousel-card .section-cards .card img {
+.secao02
+    .content-secao02
+    .secao02-text
+    .carrousel-card
+    .section-cards
+    .card
+    img {
     width: 250px;
     height: 330px;
     object-fit: cover;
@@ -370,14 +381,25 @@ body {
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.404);
 }
 
-.secao02 .content-secao02 .secao02-text .carrousel-card .section-cards .card.active {
+.secao02
+    .content-secao02
+    .secao02-text
+    .carrousel-card
+    .section-cards
+    .card.active {
     opacity: 1;
     transform: scale(1.2);
     /* Destaca a imagem ativa */
     z-index: 2;
 }
 
-.secao02 .content-secao02 .secao02-text .carrousel-card .section-cards .card.active img {
+.secao02
+    .content-secao02
+    .secao02-text
+    .carrousel-card
+    .section-cards
+    .card.active
+    img {
     transform: scale(1.2);
     opacity: 1;
 }
@@ -520,8 +542,6 @@ body {
     }
 }
 
-
-
 /* ----------Incio das Estilizações da SEÇÃO 03---------- */
 .secao03 {
     background-color: #000000;
@@ -529,7 +549,13 @@ body {
     height: 100%;
 
     border-top: 1px solid;
-    border-image: linear-gradient(90deg, rgba(60, 74, 83, 0), #FFC800, rgba(60, 74, 83, 0)) 1;
+    border-image: linear-gradient(
+            90deg,
+            rgba(60, 74, 83, 0),
+            #ffc800,
+            rgba(60, 74, 83, 0)
+        )
+        1;
 }
 
 .secao03 .content-secao03 {
@@ -558,7 +584,7 @@ body {
 }
 
 .secao03 .content-secao03 .depoiments .depoiments-text {
-    background-color: #F5F5F5;
+    background-color: #f5f5f5;
     border-radius: 20px;
     text-align: left;
     transition: transform 0.3s ease;
@@ -598,8 +624,6 @@ body {
     font-size: 16px;
 }
 
-
-
 /* ----------Incio das Estilizações da SEÇÃO 04---------- */
 .secao04 {
     background-color: #000000;
@@ -607,7 +631,13 @@ body {
     height: 100%;
 
     border-top: 1px solid;
-    border-image: linear-gradient(90deg, rgba(60, 74, 83, 0), #FFC800, rgba(60, 74, 83, 0)) 1;
+    border-image: linear-gradient(
+            90deg,
+            rgba(60, 74, 83, 0),
+            #ffc800,
+            rgba(60, 74, 83, 0)
+        )
+        1;
 }
 
 .secao04 .content-section04 {
@@ -702,8 +732,6 @@ body {
     }
 }
 
-
-
 /* ----------Incio das Estilizações da SEÇÃO 05---------- */
 .secao05 {
     background-color: #000000;
@@ -711,7 +739,13 @@ body {
     height: 100%;
 
     border-top: 1px solid;
-    border-image: linear-gradient(90deg, rgba(60, 74, 83, 0), #FFC800, rgba(60, 74, 83, 0)) 1;
+    border-image: linear-gradient(
+            90deg,
+            rgba(60, 74, 83, 0),
+            #ffc800,
+            rgba(60, 74, 83, 0)
+        )
+        1;
 }
 
 .secao05 .content-secao-05 {
@@ -737,7 +771,6 @@ body {
     font-weight: bold;
     font-size: 32px;
     letter-spacing: 3px;
-
 }
 
 .secao05 .content-secao-05 .section05-text {
@@ -796,8 +829,6 @@ body {
     letter-spacing: 3px;
 }
 
-
-
 /* ----------Incio das Estilizações da SEÇÃO FOOTER---------- */
 footer {
     background-color: #000000f5;
@@ -819,10 +850,13 @@ footer {
     padding-bottom: 10px;
     margin-bottom: 20px;
     border-bottom: 2px solid;
-    border-image: linear-gradient(90deg,
+    border-image: linear-gradient(
+            90deg,
             rgba(60, 74, 83, 0.678),
             #e6e6e6,
-            rgba(60, 74, 83, 0.582)) 1;
+            rgba(60, 74, 83, 0.582)
+        )
+        1;
 }
 
 .section-footer .content-footer .content-01 p {
@@ -880,15 +914,12 @@ footer {
     right: 9px;
 }
 
-#menu-nav.active+.section-footer .btn-whats {
+#menu-nav.active + .section-footer .btn-whats {
     display: none;
 }
 
-
-
 /* -----------Inicio das Medias Queries----------- */
 @media screen and (min-width: 768px) {
-
     /* -----Seção Banner----- */
     .section-banner {
         background-size: auto;
@@ -932,7 +963,6 @@ footer {
         letter-spacing: 4px;
     }
 
-
     /* -----Seção Seção 01----- */
     .secao01 {
         height: 100vh;
@@ -964,7 +994,6 @@ footer {
         letter-spacing: 4px;
     }
 
-
     /* -----Seção Seção 02----- */
     /* .secao02 {
         background-color: #000000;
@@ -988,12 +1017,10 @@ footer {
         letter-spacing: 4px;
     }
 
-
     /* -----Seção Seção 03----- */
     .secao03 .content-secao03 {
         padding-bottom: 50px;
         padding-top: 20px;
-
     }
 
     .secao03 .content-secao03 h2 {
@@ -1009,7 +1036,13 @@ footer {
         flex-direction: column;
     }
 
-    .secao03 .content-secao03 .depoiments .depoiments-text .dados-pessoais a img {
+    .secao03
+        .content-secao03
+        .depoiments
+        .depoiments-text
+        .dados-pessoais
+        a
+        img {
         width: 38px;
         height: 38px;
     }
@@ -1023,7 +1056,6 @@ footer {
         letter-spacing: 2px;
         font-size: 22px;
     }
-
 
     /* -----Seção Seção 04----- */
     .secao04 .content-section04 {
@@ -1064,7 +1096,6 @@ footer {
         letter-spacing: 4px;
     }
 
-
     /* -----Seção Seção 05----- */
     .secao05 .content-secao-05 h2 {
         font-size: 50px;
@@ -1086,7 +1117,6 @@ footer {
         border-radius: 10px;
         margin-top: 25px;
         padding: 100px 10px;
-
     }
 
     .secao05 .content-secao-05 .section05-text .text p {
@@ -1111,7 +1141,6 @@ footer {
         letter-spacing: 4px;
     }
 
-
     /* -----Seção FOOTER----- */
     .section-footer .content-footer .content-01 p {
         font-size: 20px;
@@ -1131,16 +1160,12 @@ footer {
     }
 }
 
-
-
 /* ------------Versão Desktop------------ */
 @media screen and (min-width: 1023px) {
-
     .section-limited {
         max-width: 1024px;
         margin: 0 auto;
     }
-
 
     /* -----Seção Banner----- */
     .section-banner {
@@ -1165,18 +1190,15 @@ footer {
         margin-top: 40px;
     }
 
-
     /* -----Seção Seção01----- */
     .secao01 {
         height: 100%;
     }
 
-
     /* -----Seção Seção 02----- */
     .secao02 {
         height: 100vh;
     }
-
 
     /* -----Seção Seção 03----- */
     .secao03 .content-secao03 .depoiments {
@@ -1187,7 +1209,7 @@ footer {
     }
 
     .secao03 .content-secao03 .depoiments .depoiments-text {
-        background-color: #F5F5F5;
+        background-color: #f5f5f5;
         border-radius: 20px;
         text-align: left;
         transition: transform 0.3s ease;
@@ -1208,7 +1230,13 @@ footer {
         margin-bottom: 15px;
     }
 
-    .secao03 .content-secao03 .depoiments .depoiments-text .dados-pessoais a img {
+    .secao03
+        .content-secao03
+        .depoiments
+        .depoiments-text
+        .dados-pessoais
+        a
+        img {
         width: 28px;
         height: 28px;
     }
@@ -1227,14 +1255,11 @@ footer {
         font-size: 16px;
     }
 
-
     /* -----Seção Seção 04----- */
     /* Sem estilizações a serem alteradas */
 
-
     /* -----Seção Seção 05----- */
     /* Sem estilizações a serem alteradas */
-
 
     /* -----Seção Seção 05----- */
     .secao05 .content-secao-05 .section05-text {
@@ -1243,7 +1268,6 @@ footer {
 }
 
 @media screen and (min-width: 1400px) {
-
     /* -----Seção BANNER----- */
     .section-banner {
         background-repeat: no-repeat;
@@ -1276,7 +1300,6 @@ footer {
         letter-spacing: 2px;
     }
 
-
     /* -----Seção SECAO01----- */
     .secao01 .content-secao01 .secao01-text h2 {
         font-size: 40px;
@@ -1288,7 +1311,6 @@ footer {
         padding: 20px;
         letter-spacing: 2px;
     }
-
 
     /* -----Seção SECAO02----- */
     .secao02 .content-secao02 .secao02-text h2 {
@@ -1302,13 +1324,11 @@ footer {
         letter-spacing: 2px;
     }
 
-
     /* -----Seção SECAO03----- */
     .secao03 .content-secao03 h2 {
         font-size: 40px;
         letter-spacing: 7px;
     }
-
 
     /* -----Seção SECAO04----- */
     .secao04 .content-section04 h2 {
@@ -1332,7 +1352,6 @@ footer {
         letter-spacing: 2px;
     }
 
-
     /* -----Seção SECAO05----- */
     .secao05 .content-secao-05 h2 {
         font-size: 40px;
@@ -1342,25 +1361,4 @@ footer {
     .secao05 .content-secao-05 h2 span {
         font-size: 50px;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
