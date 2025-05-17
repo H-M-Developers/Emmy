@@ -456,9 +456,10 @@ header {
     padding: 40px 20px;
     border-top: 2px solid #ffe0a7;
 
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)),
-        url("../assets/curso.webp");
-    background-size: 100% 100%;
+    background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4)),
+        url("../assets/teste-background\ 4.jpg");
+
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -1416,7 +1417,7 @@ footer {
     /* --------------------------SEÇÃO LINKS--------------------------  */
     .section-links {
         background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
-            url("../assets/download.webp");
+            url("../assets/download.");
         background-repeat: no-repeat;
         background-position: center;
         background-attachment: fixed;

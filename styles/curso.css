@@ -1144,7 +1144,7 @@ footer {
 
     /* -----Seção Banner----- */
     .section-banner {
-        background-image: url("../assets/DESKTOP-Links-da-Bio.jpg");
+        background-image: url("../assets/banner-desktop.png");
 
         padding-top: 0px;
         padding-bottom: 0px;
@@ -1242,7 +1242,7 @@ footer {
     }
 }
 
-@media screen and (min-width: 1240px) {
+@media screen and (min-width: 1400px) {
 
     /* -----Seção BANNER----- */
     .section-banner {
