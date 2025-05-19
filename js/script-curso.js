@@ -1,5 +1,5 @@
 const slides = document.querySelectorAll(".slide");
-const slidesContainer = document.querySelector(".slides-container");
+const slidesContainer = document.querySelector(".slides");
 const dotsContainer = document.querySelector(".dots");
 
 let currentIndex = 0;
@@ -24,6 +24,7 @@ function updateDots(index) {
 }
 
 function goToSlide(index) {
+    currentIndex = index;
     const offset = -index * 100;
     slidesContainer.style.transform = `translateX(${offset}%)`;
     updateDots(index);
