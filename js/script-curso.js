@@ -53,6 +53,8 @@ slidesContainer.addEventListener("touchend", () => {
 
     goToSlide(currentIndex);
     isDragging = false;
+    startX = 0; // Reseta a posição inicial
+    currentX = 0; // Reseta a posição atual
 });
 
 createDots();
