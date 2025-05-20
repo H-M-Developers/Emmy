@@ -798,6 +798,43 @@ footer {
     display: none;
 }
 
+/* --- Estilização dos botões do carrossel --- */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #00000055;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+#prevSlide {
+    left: 10px;
+}
+#nextSlide {
+    right: 10px;
+}
+
+.carousel-btn:hover {
+    background: #ffc800;
+    color: #000;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+
+/* @media (max-width: 600px) {
+    .carousel-btn {
+        font-size: 1.5rem;
+        padding: 6px 12px;
+    }
+    #prevSlide { left: 2px; }
+    #nextSlide { right: 2px; }
+} */
+
 /* -----------Inicio das Medias Queries----------- */
 @media screen and (min-width: 768px) {
     /* -----Seção Banner----- */
@@ -1055,12 +1092,12 @@ footer {
     }
 
     .section-footer .content-footer .btn-whats {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
     }
 
     .section-footer .content-footer .btn-whats img {
-        width: 55px;
+        width: 50px;
     }
 }
 
@@ -1230,6 +1267,16 @@ footer {
         font-size: 18px;
         padding: 20px;
         letter-spacing: 2px;
+    }
+
+    .secao02 .content-secao02 .secao02-text .carousel {
+        height: 780px;
+    }
+
+    .secao02 .content-secao02 .secao02-text .carousel .slides .slide img {
+        width: 80%;
+        margin: 0 auto;
+        border-radius: 10px;
     }
 
     /* -----Seção SECAO03----- */

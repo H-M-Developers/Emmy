@@ -30,9 +30,28 @@ function goToSlide(index) {
     updateDots(index);
 }
 
+// Botões de navegação
+const prevBtn = document.getElementById("prevSlide");
+const nextBtn = document.getElementById("nextSlide");
+
+if (prevBtn && nextBtn) {
+    prevBtn.addEventListener("click", () => {
+        if (currentIndex > 0) {
+            goToSlide(currentIndex - 1);
+        }
+    });
+
+    nextBtn.addEventListener("click", () => {
+        if (currentIndex < slides.length - 1) {
+            goToSlide(currentIndex + 1);
+        }
+    });
+}
+
 // Eventos de toque para deslizar
 slidesContainer.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
+    currentX = startX;
     isDragging = true;
 });
 
@@ -46,15 +65,16 @@ slidesContainer.addEventListener("touchend", () => {
     const deltaX = currentX - startX;
 
     if (deltaX > 50 && currentIndex > 0) {
-        currentIndex--; // Deslizar para a esquerda (voltar)
+        goToSlide(currentIndex - 1);
     } else if (deltaX < -50 && currentIndex < slides.length - 1) {
-        currentIndex++; // Deslizar para a direita (avançar)
+        goToSlide(currentIndex + 1);
+    } else {
+        goToSlide(currentIndex);
     }
 
-    goToSlide(currentIndex);
     isDragging = false;
-    startX = 0; // Reseta a posição inicial
-    currentX = 0; // Reseta a posição atual
+    startX = 0;
+    currentX = 0;
 });
 
 createDots();
