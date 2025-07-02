@@ -242,34 +242,43 @@ header {
 
 /* ----------------- INICIO DAS ESTILIZAÇÕES DO BANNER ----------------- */
 .section-banner {
-    background: url("../assets/banner.webp") no-repeat center center/contain,
+    /* background: url("../assets/banner.webp") no-repeat center center/contain,
         linear-gradient(to right, rgb(0, 0, 0), rgb(63, 63, 63));
     background-size: auto 75%;
-    background-position: bottom;
+    background-position: bottom; */
+
+    background-image: url("../assets/banner-mobille.png");
+    background-position: top center;
+    background-size: cover;
 }
 
 .section-banner {
     height: 85vh;
-    padding: 40px 0;
+    display: flex;
 }
 
 .content-banner {
     height: 100%;
+
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    padding-bottom: 50px;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding-bottom: 90px;
+    width: 90%;
+    margin: 0 auto;
 }
 
 .content-banner h1 {
-    font-size: 35px;
+    font-size: 55px;
     color: #fff;
     text-align: center;
-    letter-spacing: 4px;
+    letter-spacing: 9px;
 }
 
 .content-banner p {
-    font-size: 18px;
+    font-size: 25px;
     color: #fff;
     text-align: center;
     letter-spacing: 6px;
@@ -489,8 +498,8 @@ header {
     padding: 40px 20px;
     border-top: 2px solid #ffe0a7;
 
-    background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4)),
-        url("../assets/teste-background\ 4.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+        url("../assets/background\ links.jpg");
 
     background-size: cover;
     background-position: center;
@@ -550,42 +559,43 @@ header {
 }
 
 .section-links .content-links .links .card-links a .image {
-    width: 70px;
-    height: 60px;
+    width: 80px;
+    height: 100px;
     background-color: #128c7e;
 
     margin-right: 20px;
-    border: 1px solid #15151531;
-    border-radius: 50%;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+
+    border: 1px solid #ffe0a7;
 }
 
 .section-links .content-links .links .card-links a .card1 {
-    background-image: url(../assets/apostila.webp);
+    background-image: url(../assets/link01.jpg);
     background-size: cover;
     background-position: center;
 }
 
 .section-links .content-links .links .card-links a .card2 {
-    background-image: url(../assets/Micropigmentação\ 2.webp);
+    background-image: url(../assets/link02.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: center center;
 }
 
 .section-links .content-links .links .card-links a .card3 {
-    background-image: url(../assets/designer\ sobrancelhas.webp);
+    background-image: url(../assets/link03.jpg);
     background-size: cover;
     background-position: center;
 }
 
 .section-links .content-links .links .card-links a .card4 {
-    background-image: url(../assets/lash\ lifiting.webp);
+    background-image: url(../assets/link04.jpg);
     background-size: cover;
     background-position: center;
 }
 
 .section-links .content-links .links .card-links a .card5 {
-    background-image: url(../assets/brow-lamination.webp);
+    background-image: url(../assets/link05.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -672,23 +682,14 @@ header {
     justify-content: space-between;
 }
 
-.section-contact
-    .content-contact
-    .carousel-container
-    .carousel
-    .carousel-slide {
+.section-contact .content-contact .carousel-container .carousel .carousel-slide {
     position: absolute;
     transition: all 0.5s ease;
     opacity: 0.5;
     cursor: pointer;
 }
 
-.section-contact
-    .content-contact
-    .carousel-container
-    .carousel
-    .carousel-slide
-    img {
+.section-contact .content-contact .carousel-container .carousel .carousel-slide img {
     width: 250px;
     height: 330px;
     object-fit: cover;
@@ -698,21 +699,12 @@ header {
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.404);
 }
 
-.section-contact
-    .content-contact
-    .carousel-container
-    .carousel
-    .carousel-slide.active {
+.section-contact .content-contact .carousel-container .carousel .carousel-slide.active {
     z-index: 2;
     opacity: 1;
 }
 
-.section-contact
-    .content-contact
-    .carousel-container
-    .carousel
-    .carousel-slide.active
-    img {
+.section-contact .content-contact .carousel-container .carousel .carousel-slide.active img {
     transform: scale(1.2);
     opacity: 1;
 }
@@ -927,14 +919,12 @@ header {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(
-        45deg,
-        #feda75,
-        #fa7e1e,
-        #d62976,
-        #962fbf,
-        #4f5bd5
-    );
+    background: linear-gradient(45deg,
+            #feda75,
+            #fa7e1e,
+            #d62976,
+            #962fbf,
+            #4f5bd5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -966,13 +956,10 @@ footer {
     padding-bottom: 10px;
     margin-bottom: 20px;
     border-bottom: 2px solid;
-    border-image: linear-gradient(
-            90deg,
+    border-image: linear-gradient(90deg,
             rgba(60, 74, 83, 0.678),
             #e6e6e6,
-            rgba(60, 74, 83, 0.582)
-        )
-        1;
+            rgba(60, 74, 83, 0.582)) 1;
 }
 
 .section-footer .content-footer .content-01 p {
@@ -1030,7 +1017,7 @@ footer {
     right: 9px;
 }
 
-#menu-nav.active + .section-footer .btn-whats {
+#menu-nav.active+.section-footer .btn-whats {
     display: none;
 }
 
@@ -1074,6 +1061,7 @@ footer {
 
 /* -------------------------- MIN 768 PX --------------------------  */
 @media screen and (min-width: 768px) {
+
     /* ---------BOTÃO HAMBURGUER-----------  */
     #menu-nav .imagem img {
         margin-top: 15px;
@@ -1120,20 +1108,39 @@ footer {
     }
 
     /* --------------------------SEÇÃO BANNER--------------------------  */
+
+    .section-banner {
+        height: 95vh;
+        display: flex;
+    }
+
+    .content-banner {
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+
+        padding-bottom: 90px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
     .section-banner .content-banner {
-        height: 20%;
-        width: 100%;
+        /* height: 20%; */
+        width: 90%;
         margin: 0 auto;
     }
 
     .section-banner .content-banner h1 {
-        font-size: 60px;
-        letter-spacing: 8px;
+        font-size: 80px;
+        letter-spacing: 10px;
     }
 
     .section-banner .content-banner p {
         font-size: 25px;
-        letter-spacing: 13px;
+        letter-spacing: 18px;
     }
 
     /* --------------------------SEÇÃO SOBRE--------------------------  */
@@ -1219,12 +1226,7 @@ footer {
         width: 100%;
     }
 
-    .section-contact
-        .content-contact
-        .carousel-container
-        .carousel
-        .carousel-slide
-        img {
+    .section-contact .content-contact .carousel-container .carousel .carousel-slide img {
         width: 280px;
         height: 430px;
     }
@@ -1386,26 +1388,50 @@ footer {
     }
 
     .section-banner {
-        background: url("../assets/banner.webp") no-repeat center center/contain,
+        /* background: url("../assets/banner.webp") no-repeat center center/contain,
             linear-gradient(to right, #000000 10%, #3f3f3f 100%);
         background-size: auto 87vh;
         background-position: right;
         border-bottom: 2px solid #ffe0a7;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: center; */
+
+        background-image: url("../assets/banner-desktop.png");
+
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 100px;
+    }
+
+    .section-banner {
+        height: 95vh;
+        display: flex;
+    }
+
+    .content-banner {
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+
+        padding-bottom: 90px;
+        width: 50%;
+        /* margin: 0 auto; */
     }
 
     .section-banner .content-banner {
-        width: 100%;
-        margin-left: 20px;
+        width: 40%;
+        margin: 0;
     }
 
     .section-banner .content-banner h1 {
-        font-size: 60px;
-        text-align: left;
+        font-size: 90px;
+        text-align: start;
         margin-left: 50px;
-        letter-spacing: 15px;
+        letter-spacing: 10px;
     }
 
     .section-banner .content-banner p {
@@ -1504,12 +1530,7 @@ footer {
         height: 70vh;
     }
 
-    .section-contact
-        .content-contact
-        .carousel-container
-        .carousel
-        .carousel-slide
-        img {
+    .section-contact .content-contact .carousel-container .carousel .carousel-slide img {
         height: 45vh;
     }
 
@@ -1578,6 +1599,7 @@ footer {
 }
 
 @media screen and (max-width: 400px) {
+
     .slider-prev,
     .slider-next {
         position: absolute;
@@ -1586,6 +1608,7 @@ footer {
 }
 
 @media screen and (min-width: 400px) and (max-width: 500px) {
+
     .slider-prev,
     .slider-next {
         position: absolute;
