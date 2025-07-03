@@ -498,7 +498,7 @@ header {
     padding: 40px 20px;
     border-top: 2px solid #ffe0a7;
 
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
         url("../assets/background\ links.jpg");
 
     background-size: cover;
