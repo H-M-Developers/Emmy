@@ -324,7 +324,7 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.6;
+  opacity: 0.2;
   mix-blend-mode: lighten;
   transform: scaleX(-1);
   z-index: -1;
@@ -1089,7 +1089,6 @@ footer {
   }
 
   .sobre .sobre-container .sobre-image img {
-    opacity: 0.3;
     margin-left: 15px;
   }
 }
@@ -1194,6 +1193,16 @@ footer {
     letter-spacing: 3px;
     line-height: 35px;
     width: 100%;
+  }
+
+  .sobre-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    mix-blend-mode: lighten;
+    transform: scaleX(-1);
+    z-index: -1;
   }
 
   /* -----------SLIDER CAROUSEL-----------  */
@@ -1483,6 +1492,7 @@ footer {
   /* --------------------------SEÇÃO SOBRE--------------------------  */
   .sobre-image {
     z-index: 1;
+    opacity: 0.2;
   }
 
   .sobre .aglomerado-sobre .sobre-container .sobre-text {
