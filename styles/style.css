@@ -76,7 +76,10 @@ body {
 
 /* ----------------- INICIO DE ESTILIZAÇÃO DO HEADER ----------------- */
 header {
-  background: linear-gradient(to right, #000000 10%, #3f3f3f 100%);
+  /* background: linear-gradient(to right, #000000 10%, #3f3f3f 100%); */
+  /* position: fixed; */
+  background-color: #000000d5;
+  z-index: 9999;
 }
 
 .section-header {
@@ -84,7 +87,7 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  background-image: url("../assets/background-nav.png");
+  /* background-image: url("../assets/background-nav.png"); */
 }
 
 .section-header .content-header {
@@ -105,6 +108,7 @@ header {
   padding-top: 20px;
   padding-bottom: 20px;
   object-fit: cover;
+    z-index: 1000;
 }
 
 .section-header .content-header .content-header-left img {
@@ -121,6 +125,7 @@ header {
   width: 30px;
   height: 20px;
   cursor: pointer;
+    z-index: 1000;
 }
 
 .hamburger-menu span {
@@ -129,6 +134,7 @@ header {
   background-color: #ffffff;
   border-radius: 2px;
   transition: all 0.3s ease;
+    z-index: 1000;
 }
 
 /* Show hamburger menu on smaller screens */
@@ -248,9 +254,12 @@ header {
     background-size: auto 75%;
     background-position: bottom; */
 
-  background-image: url("../assets/banner-mobille.png");
+  background-image: url("../assets/banner-desktop2.png");
   background-position: top center;
   background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: -115px;
+  z-index: 1;
 }
 
 .section-banner {
@@ -260,13 +269,15 @@ header {
 
 .content-banner {
   height: 100%;
+  /* background-color: #25d366; */
+  z-index: 2;
 
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
 
-  padding-bottom: 90px;
+  padding-bottom: 10px;
   width: 90%;
   margin: 0 auto;
 }
@@ -292,7 +303,7 @@ header {
 
 .banner-img img {
   display: none;
-  z-index: 2;
+  z-index: 1;
   height: 55vh;
   object-fit: cover;
   margin: 40px auto 0 auto;
@@ -301,7 +312,7 @@ header {
 
 /* ----------------- INICIO DAS ESTILIZAÇÕES DA SEÇÃO SOBRE ----------------- */
 .sobre {
-  min-height: 100vh;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -326,7 +337,6 @@ header {
   object-fit: cover;
   opacity: 0.2;
   mix-blend-mode: lighten;
-  transform: scaleX(-1);
   z-index: -1;
 }
 
@@ -373,6 +383,11 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.sobre .slider-carousel {
+  margin-top: 350px;
+  height: 400px;
 }
 
 .sobre .slider-carousel .slider-container {
@@ -1033,11 +1048,11 @@ footer {
 /* -------------------------- MAX 400 PX --------------------------  */
 @media screen and (max-width: 400px) {
   .sobre {
-    min-height: 100vh;
+    min-height: 100%;
   }
 
   .sobre .slider-carousel {
-    margin-top: 450px;
+    margin-top: 350px;
     height: 400px;
   }
 
@@ -1067,6 +1082,28 @@ footer {
 
   .sobre .sobre-container .sobre-image img {
     margin-left: 15px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sobre {
+    min-height: 100%;
+  }
+
+  .sobre .slider-carousel {
+    margin-top: 350px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .sobre {
+    min-height: 100%;
+  }
+
+  .sobre .slider-carousel {
+    margin-top: 380px;
+    height: 400px;
   }
 }
 
@@ -1121,8 +1158,9 @@ footer {
   /* --------------------------SEÇÃO BANNER--------------------------  */
 
   .section-banner {
-    height: 95vh;
+    height: 120vh;
     display: flex;
+    margin-top: -195px;
   }
 
   .content-banner {
@@ -1177,16 +1215,15 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.8;
+    opacity: 0.2;
     mix-blend-mode: lighten;
-    transform: scaleX(-1);
     z-index: -1;
   }
 
   /* -----------SLIDER CAROUSEL-----------  */
   .sobre .slider-carousel {
     height: 100%;
-    margin-top: 350px;
+    margin-top: 445px;
   }
 
   .sobre .slider-carousel .slider-container .slider-card {
@@ -1438,34 +1475,34 @@ footer {
     justify-content: center;
     align-items: start;
 
-    padding-bottom: 90px;
+    padding-bottom: 0px;
     width: 50%;
     /* margin: 0 auto; */
   }
 
   .section-banner .content-banner {
-    width: 40%;
+    width: 60%;
     margin: 0;
   }
 
   .section-banner .content-banner h1 {
-    font-size: 90px;
+    font-size: 60px;
     text-align: start;
-    margin-left: 50px;
-    letter-spacing: 10px;
+    margin-left: 0px;
+    letter-spacing: 5px;
   }
 
   .section-banner .content-banner p {
     font-size: 25px;
     text-align: left;
-    margin-left: 50px;
+    margin-left: 0px;
     letter-spacing: 25px;
   }
 
   /* --------------------------SEÇÃO SOBRE--------------------------  */
   .sobre-image {
     z-index: 1;
-    opacity: 0.2;
+    opacity: 1;
   }
 
   .sobre .aglomerado-sobre .sobre-container .sobre-text {
@@ -1616,6 +1653,7 @@ footer {
     max-width: 1200px;
     margin-left: 120px;
   }
+
 }
 
 @media screen and (max-width: 400px) {
